@@ -8,16 +8,16 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --black: #000000;
+  --black: #050505;
   --white: #FFFFFF;
   --gold: #f0d78c;
   --gold-dim: #b8a45e;
   --charcoal: #111111;
-  --border: #1a1a1a;
-  --muted: #a0a0a0;
+  --border: #222222;
+  --muted: #b0b0b0;
   --font-serif: Georgia, 'Times New Roman', Times, serif;
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --tracking: 0.16em;
+  --tracking: 0.18em;
   --tracking-sm: 0.08em;
 }
 
@@ -42,8 +42,8 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 3rem;
-  background: rgba(0,0,0,0.92);
-  backdrop-filter: blur(10px);
+  background: rgba(5, 5, 5, 0.95);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 
@@ -51,11 +51,13 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.85rem;
   letter-spacing: var(--tracking);
   color: var(--gold);
+  font-family: var(--font-sans);
+  font-weight: 600;
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
 }
 
@@ -64,17 +66,17 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.68rem;
   letter-spacing: var(--tracking);
   text-transform: uppercase;
-  color: #666666;
-  transition: color 0.2s;
+  color: #888888;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover { color: var(--gold); }
 
 /* Layout Grid Standards */
-section { padding: 5rem 2rem; background: var(--black); position: relative; z-index: 5; }
+section { padding: 6rem 2rem; background: var(--black); position: relative; z-index: 5; }
 
 .container {
-  max-width: 960px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -89,19 +91,19 @@ section { padding: 5rem 2rem; background: var(--black); position: relative; z-in
 }
 
 .section-heading {
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 400;
   letter-spacing: 0.04em;
-  line-height: 1.25;
+  line-height: 1.3;
   margin-bottom: 1.25rem;
 }
 
 .section-desc {
   font-family: var(--font-sans);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--muted);
   line-height: 1.8;
-  max-width: 55ch;
+  max-width: 58ch;
 }
 
 /* Clean Promotional Advertising Section for Nexus Engine */
@@ -132,7 +134,7 @@ section { padding: 5rem 2rem; background: var(--black); position: relative; z-in
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -141,7 +143,7 @@ section { padding: 5rem 2rem; background: var(--black); position: relative; z-in
 
 .tier {
   background: var(--black);
-  padding: 2.5rem 2rem;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
 }
@@ -157,7 +159,7 @@ section { padding: 5rem 2rem; background: var(--black); position: relative; z-in
 }
 
 .tier h3 {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.03em;
   margin-bottom: 0.5rem;
@@ -165,10 +167,10 @@ section { padding: 5rem 2rem; background: var(--black); position: relative; z-in
 
 .tier-desc {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--muted);
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   flex: 1;
 }
 
@@ -179,9 +181,9 @@ section { padding: 5rem 2rem; background: var(--black); position: relative; z-in
 
 .tier-features li {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--muted);
-  padding: 0.4rem 0;
+  padding: 0.5rem 0;
   border-bottom: 1px solid var(--border);
   line-height: 1.5;
 }
@@ -194,12 +196,12 @@ section { padding: 5rem 2rem; background: var(--black); position: relative; z-in
   font-weight: 600;
   letter-spacing: var(--tracking);
   text-transform: uppercase;
-  padding: 0.9rem 1.5rem;
+  padding: 1rem 1.5rem;
   text-align: center;
-  transition: opacity 0.3s, transform 0.3s;
+  transition: all 0.3s ease;
 }
 
-.tier-cta:hover { transform: translateY(-1px); }
+.tier-cta:hover { transform: translateY(-2px); opacity: 0.9; }
 .tier-cta--gold { background: var(--gold); color: var(--black); }
 .tier-cta--outline { border: 1px solid var(--gold-dim); color: var(--gold); }
 
@@ -275,7 +277,7 @@ section { padding: 5rem 2rem; background: var(--black); position: relative; z-in
 
 .auth-btn:hover { opacity: 0.85; }
 
-/* Hidden Dashboards - Unlocks via JS */
+/* Hidden Dashboards */
 .hidden-workspace {
   display: none;
   border-top: 1px dashed var(--gold-dim);
@@ -315,7 +317,7 @@ section { padding: 5rem 2rem; background: var(--black); position: relative; z-in
   font-weight: 600;
 }
 
-/* Services / Curriculum Grid */
+/* Services Grid */
 .services { border-top: 1px solid var(--border); }
 
 .services-grid {
@@ -329,8 +331,377 @@ section { padding: 5rem 2rem; background: var(--black); position: relative; z-in
 
 .service {
   background: var(--black);
-  padding: 2.25rem 1.75rem;
+  padding: 2.5rem 2rem;
 }
 
 .service-number {
   font-family: var(--font-sans);
+  font-size: 0.58rem;
+  letter-spacing: var(--tracking);
+  color: var(--gold-dim);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.service h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.service p {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.class-list {
+  list-style: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.class-list li {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+}
+
+/* Video Section */
+.video-section { border-top: 1px solid var(--border); }
+
+.video-frame {
+  margin-top: 2rem;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border: 1px solid var(--gold-dim);
+  background: var(--charcoal);
+}
+
+.video-inner {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.play-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--gold-dim);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-icon svg { width: 16px; height: 16px; fill: var(--gold); margin-left: 2px; }
+
+.video-text {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: var(--tracking);
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* Contact & Footer */
+.contact { 
+  border-top: 1px solid var(--border);
+  padding-bottom: 4rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.footer-copy {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: var(--tracking);
+  color: var(--muted);
+  text-transform: uppercase;
+}
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-brand">H-NOTE ACADEMY</div>
+    <ul class="nav-links">
+      <li><a href="#gateway">System Entry</a></li>
+      <li><a href="#engine">Nexus Intelligence</a></li>
+      <li><a href="#pricing">Access Models</a></li>
+    </ul>
+    <div class="nav-brand" style="font-family: var(--font-sans); font-size: 0.65rem; color: #666666;">0 1 0 // 44001</div>
+  </nav>
+
+  <!-- RECONSTRUCTED HERO CONTAINER WITH TRANSPARENT DEPTH LAYER -->
+  <header style="position: relative; width: 100%; min-height: 100vh; padding-top: 5rem; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border);">
+    
+    <!-- Unified Base Background Image -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(135deg, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.55) 100%), url('https://i.ibb.co/7DKNVSk/background.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; z-index: 1;"></div>
+
+    <!-- Main Content Container -->
+    <div style="position: relative; z-index: 2; width: 100%; max-width: 1200px; display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; justify-content: space-between; padding: 4rem 2rem;">
+      
+      <!-- Left Column: Typography Alignment & Pitch -->
+      <div style="flex: 1.2; min-width: 320px; max-width: 580px;">
+        <div style="color: var(--gold); font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: var(--tracking); text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+          The Professional Remnant Pipeline
+        </div>
+        <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.05em; line-height: 1.25; margin-bottom: 2rem; color: var(--white); font-family: var(--font-serif); text-shadow: 0 2px 8px rgba(0,0,0,0.6);">
+          BUSINESS IS A PERFORMING ART.<br>WAKE UP YOUR CREATIVITY.
+        </h1>
+        <p style="font-family: var(--font-sans); font-size: 0.95rem; color: #f0f0f0; line-height: 1.8; margin-bottom: 2.5rem; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">
+          Welcome to H-Note Academy. We integrate premium vocal tracking, spatial somatic positioning, and narrative arts to transform creative minds into exceptional modern operational leaders.
+        </p>
+        <a href="#gateway" style="display: inline-block; font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600; letter-spacing: var(--tracking); text-transform: uppercase; color: var(--black); background: var(--gold); padding: 1.1rem 2.75rem; border: 1px solid var(--gold); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.45);" onmouseover="this.style.background='transparent'; this.style.color='var(--gold)';" onmouseout="this.style.background='var(--gold)'; this.style.color='var(--black)';">
+          Access Secure System
+        </a>
+      </div>
+
+      <!-- Right Column: Fine-Tuned Executive Card Panel -->
+      <div style="flex: 1; min-width: 310px; max-width: 440px; background: rgba(10, 10, 10, 0.75); border: 1px solid rgba(240, 215, 140, 0.25); padding: 3rem 2.5rem; backdrop-filter: blur(8px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);">
+        
+        <!-- Profile Portrait Container -->
+        <div style="width: 100%; max-width: 260px; aspect-ratio: 3/4; border: 1px solid var(--gold-dim); background: url('https://i.ibb.co/wm165fj/Best-Randy.jpg') center center / cover no-repeat; margin: 0 auto 2rem auto; box-shadow: 0 8px 20px rgba(0,0,0,0.5);"></div>
+        
+        <!-- Identity Group -->
+        <div style="font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: var(--tracking); text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.4rem; text-align: center;">
+          Randy Lee Hensley
+        </div>
+        <div style="font-family: var(--font-sans); font-size: 0.72rem; color: var(--gold-dim); margin-bottom: 1.5rem; font-weight: 500; text-align: center; letter-spacing: 0.02em;">
+          CADC-A | Creative Strategist &amp; Counselor
+        </div>
+        
+        <!-- Editorial Bio Pitch -->
+        <h3 style="font-size: 1.15rem; font-weight: 400; margin-bottom: 0.85rem; color: var(--white); text-align: center; font-family: var(--font-serif); letter-spacing: 0.02em;">
+          Treating Enterprise as a Fine Performance
+        </h3>
+        <p style="font-family: var(--font-sans); font-size: 0.88rem; color: #d0d0d0; line-height: 1.75; text-align: center;">
+          With over 12 years of dedicated counseling expertise, human behavior optimization, and strategic organizational alignment, Randy patterns operational architecture that unlocks deep authentic presence.
+        </p>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Proprietary Architecture Section -->
+  <section id="engine" class="services">
+    <div class="container">
+      <div class="section-label">01 // Proprietary Architecture</div>
+      <h2 class="section-heading">The H-Note Nexus Exit Engine Suite</h2>
+      <p class="section-desc">Bespoke operational power, executed behind closed doors to deliver maximum market value.</p>
+      
+      <div class="promo-highlight">
+        <h3>Backend Automation Power</h3>
+        <p>The Nexus Exit Engine represents our premier proprietary framework—an isolated system designed explicitly to run complex market analysis, script optimization, and ultimate high-speed conversion copywriting. By retaining this platform exclusively within administrative operations, we maintain an unparalleled creative edge, utilizing its data pipelines to build bespoke agency assets for direct executive execution.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <div class="section-label">02 // Enrollment Models</div>
+      <h2 class="section-heading">Secure Workspace Access</h2>
+      <p class="section-desc">Choose your positioning within the collective architecture. From ongoing student access points to high-level system applications.</p>
+      
+      <div class="pricing-grid">
+        <div class="tier">
+          <div class="tier-label">Student Tier</div>
+          <h3>The Core Portal</h3>
+          <p class="tier-desc">Complete entry to the open Student Portal paths and exclusive access parameters inside the secure Clubhouse network ecosystem.</p>
+          <ul class="tier-features">
+            <li>Full 3-Stage Course Portal</li>
+            <li>Clubhouse Community Log</li>
+            <li>Basic Narrative Support</li>
+          </ul>
+          <a href="#gateway" class="tier-cta tier-cta--outline">Apply For Placement</a>
+        </div>
+        <div class="tier">
+          <div class="tier-label">Premium Service</div>
+          <h3>The Nexus Suite</h3>
+          <p class="tier-desc">Acquire bespoke copywriting or automated pipeline service outcomes deployed directly by the Founder utilizing the protected Nexus script framework.</p>
+          <ul class="tier-features">
+            <li>Everything in Student Portal</li>
+            <li>Bespoke Project Engineering</li>
+            <li>Exclusive Engine Output Fulfillment</li>
+          </ul>
+          <a href="#gateway" class="tier-cta tier-cta--gold">Acquire Engine Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Unified Entry Gateway Section -->
+  <section id="gateway" class="gateway-section">
+    <div class="container">
+      <div class="section-label">03 // Central Verification Node</div>
+      <h2 class="section-heading">System Entrance Gateway</h2>
+      <p class="section-desc">Input authorized identity tokens to instantiate your custom dashboard space and unlock secure platform panels.</p>
+      
+      <div class="terminal-gate">
+        <div class="auth-tabs">
+          <div class="auth-tab active" onclick="switchTab('portal')">Log In Student Portal</div>
+          <div class="auth-tab" onclick="switchTab('clubhouse')">Clubhouse Gateway</div>
+        </div>
+        
+        <!-- Student Portal Panel -->
+        <div id="panel-portal" class="auth-panel active">
+          <form onsubmit="unlockSecureWorkspace(event, 'Student Portal');">
+            <input type="text" class="auth-input" placeholder="STUDENT PLACEMENT IDENTIFIER" required />
+            <input type="password" class="auth-input" placeholder="ACCESS PIN KEY" required />
+            <button type="submit" class="auth-btn">Initialize Portal Session</button>
+          </form>
+        </div>
+        
+        <!-- Clubhouse Panel -->
+        <div id="panel-clubhouse" class="auth-panel">
+          <form onsubmit="unlockSecureWorkspace(event, 'Clubhouse Network');">
+            <input type="email" class="auth-input" placeholder="ACCOUNT DISCOVERY EMAIL" required />
+            <input type="password" class="auth-input" placeholder="SECURE TERMINAL KEY" required />
+            <button type="submit" class="auth-btn">Authorize Node Connection</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECURE HIDDEN WORKSPACE WORK AREA -->
+  <div id="unlocked-workspace" class="hidden-workspace">
+    
+    <!-- Dynamic Header Notification Widget -->
+    <div class="container" style="padding-top: 4rem; padding-bottom: 0;">
+      <div class="user-profile-widget">
+        <div class="avatar-container"></div>
+        <div class="avatar-text">Active Workspace: <span id="active-session-title">Verified</span> Node Sync Connected (Randy Lee Hensley View)</div>
+      </div>
+    </div>
+
+    <!-- Academy Curriculum Section -->
+    <section id="curriculum" class="services">
+      <div class="container">
+        <div class="section-label">04 // Private Academic Curriculum Grid</div>
+        <h2 class="section-heading">Your Curated Structural Tracks</h2>
+        <p class="section-desc">Welcome inside. These assets are now fully loaded and decrypted for active study protocols.</p>
+        
+        <div class="services-grid">
+          <!-- Stage 1 -->
+          <div class="service">
+            <div class="service-number">STAGE 01</div>
+            <h3>Tuning Up</h3>
+            <p>Initial alignment and precision orchestration across primary sensory expressions and technical structural principles.</p>
+            <ul class="class-list">
+              <li>• Music and Singing</li>
+              <li>• Dancing and Performing</li>
+              <li>• Writing and Art</li>
+            </ul>
+          </div>
+          <!-- Stage 2 -->
+          <div class="service">
+            <div class="service-number">STAGE 02</div>
+            <h3>Integrating</h3>
+            <p>Fusing performance practices directly into executive frameworks. Merging musical cadence, visual artistry, and spatial presence with operational mechanics.</p>
+            <ul class="class-list">
+              <li>• Strategic Cadence Voice</li>
+              <li>• Spatial Executive Sync</li>
+              <li>• Narrative Brand Form</li>
+            </ul>
+          </div>
+          <!-- Stage 3 -->
+          <div class="service">
+            <div class="service-number">STAGE 03</div>
+            <h3>Professional Development</h3>
+            <p>The operational apex. Students distill their training into structural reality, formulating a complete, production-ready, launch-positioned asset framework.</p>
+            <ul class="class-list">
+              <li>• Structural Asset Model</li>
+              <li>• Production Architecture</li>
+              <li>• Actionable Business Plan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Broadcast Section -->
+    <section class="video-section">
+      <div class="container">
+        <div class="section-label">05 // Signal Stream</div>
+        <h2 class="section-heading">Waking Up Creativity Briefing</h2>
+        <p class="section-desc">Exclusive internal stream orientation outlining spatial mechanics, executive tone, and strategic layouts.</p>
+        <div class="video-frame">
+          <div class="video-inner">
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="video-text">Streaming Private Narrative Feed</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Contact Form & Footer Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-label">06 // Secure Pipeline</div>
+      <h2 class="section-heading">Initiate Verification Sequence</h2>
+      <p class="section-desc">Submit your background details to confirm your placement verification parameters within the remnant database.</p>
+      
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 H-NOTE CREATIVE SOLUTIONS | THE GREAT REMINDER</div>
+        <div class="footer-copy" style="color: var(--gold-dim); font-size: 0.62rem;">
+          Operational Clearance 44001 // Engineered via Architecture Sync by Gemini
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- System Automation Logic Controls -->
+  <script>
+    function switchTab(type) {
+      const tabs = document.querySelectorAll('.auth-tab');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.getElementById('panel-portal').classList.remove('active');
+      document.getElementById('panel-clubhouse').classList.remove('active');
+      
+      document.getElementById('panel-' + type).classList.add('active');
+    }
+
+    function unlockSecureWorkspace(event, sessionTypeName) {
+      event.preventDefault();
+      
+      document.getElementById('active-session-title').innerText = sessionTypeName;
+      
+      const workspace = document.getElementById('unlocked-workspace');
+      workspace.style.display = 'block';
+      
+      setTimeout(() => {
+        workspace.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  </script>
+</body>
+</html>
