@@ -33,6 +33,7 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
+/* Navigation */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -69,6 +70,7 @@ a { color: inherit; text-decoration: none; }
 
 .nav-links a:hover { color: var(--gold); }
 
+/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -85,7 +87,7 @@ a { color: inherit; text-decoration: none; }
   content: '';
   position: absolute;
   inset: 0;
-  background: url('background.png') center center / cover no-repeat;
+  background: url('https://i.ibb.co/7DKNVSk/background.png') center center / cover no-repeat;
   opacity: 0.15;
   pointer-events: none;
 }
@@ -146,6 +148,7 @@ a { color: inherit; text-decoration: none; }
 
 .hero-cta:hover { opacity: 0.85; transform: translateY(-1px); }
 
+/* Common Structural Layouts */
 section { padding: 5rem 2rem; }
 
 .container {
@@ -179,6 +182,7 @@ section { padding: 5rem 2rem; }
   max-width: 55ch;
 }
 
+/* About Section */
 .about { border-top: 1px solid var(--border); }
 
 .about-grid {
@@ -193,7 +197,7 @@ section { padding: 5rem 2rem; }
   width: 100%;
   aspect-ratio: 3/4;
   border: 1px solid var(--gold-dim);
-  background: url('Best Randy.JPG') center center / cover no-repeat;
+  background: url('https://i.ibb.co/wm165fj/Best-Randy.jpg') center center / cover no-repeat;
   background-color: var(--charcoal);
 }
 
@@ -222,6 +226,7 @@ section { padding: 5rem 2rem; }
   margin-bottom: 1.25rem;
 }
 
+/* Services / Curriculum Section */
 .services { border-top: 1px solid var(--border); }
 
 .services-grid {
@@ -262,6 +267,21 @@ section { padding: 5rem 2rem; }
   line-height: 1.65;
 }
 
+.class-list {
+  list-style: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.class-list li {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+}
+
+/* Video Section */
 .video-section { border-top: 1px solid var(--border); }
 
 .video-frame {
@@ -303,6 +323,7 @@ section { padding: 5rem 2rem; }
   text-transform: uppercase;
 }
 
+/* Engine Embed Zone Section */
 .embed-zone {
   margin-top: 2.5rem;
   border: 1px solid var(--border);
@@ -331,7 +352,7 @@ section { padding: 5rem 2rem; }
   font-family: var(--font-sans);
   font-size: 0.58rem;
   letter-spacing: var(--tracking);
-  color: var(--muted);
+  color: #00ff66;
   text-transform: uppercase;
 }
 
@@ -341,27 +362,298 @@ section { padding: 5rem 2rem; }
 }
 
 .embed-body {
-  min-height: 300px;
+  min-height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  background: #050505;
+}
+
+/* Pricing Section */
+.pricing { border-top: 1px solid var(--border); }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 2.5rem;
+}
+
+.tier {
+  background: var(--black);
+  padding: 2.5rem 2rem;
+  display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 2.5rem;
 }
 
-.embed-body p {
+.tier-label {
   font-family: var(--font-sans);
-  font-size: 0.78rem;
-  color: #444;
-  text-align: center;
-  max-width: 36ch;
+  font-size: 0.58rem;
+  letter-spacing: var(--tracking);
+  color: var(--gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.tier h3 {
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.tier-desc {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--muted);
   line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
 }
 
-.embed-tag {
+.tier-features {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.tier-features li {
   font-family: var(--font-sans);
-  font-size: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.5;
+}
+
+.tier-features li:last-child { border-bottom: none; }
+
+.tier-cta {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+  padding: 0.9rem 1.5rem;
+  text-align: center;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.tier-cta:hover { transform: translateY(-1px); }
+.tier-cta--gold { background: var(--gold); color: var(--black); }
+.tier-cta--outline { border: 1px solid var(--gold-dim); color: var(--gold); }
+
+/* Contact & Footer Section */
+.contact { 
+  border-top: 1px solid var(--border);
+  padding-bottom: 4rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.footer-copy {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: var(--tracking);
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .founder-photo { max-width: 280px; margin: 0 auto; }
+}
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-brand">H-NOTE ACADEMY</div>
+    <ul class="nav-links">
+      <li><a href="#about">The Founder</a></li>
+      <li><a href="#curriculum">Academy Portal</a></li>
+      <li><a href="#engine">Nexus Exit Engine</a></li>
+      <li><a href="#pricing">Access Models</a></li>
+    </ul>
+    <div class="nav-brand" style="font-family: var(--font-sans); font-size: 0.65rem; color: var(--muted);">0 1 0 // 44001</div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-eyebrow">The Professional Remnant Pipeline</div>
+    <h1>BUSINESS IS A PERFORMING ART. WAKE UP YOUR CREATIVITY.</h1>
+    <p class="hero-sub">Welcome to H-Note Academy. We integrate premium vocal tracking, spatial somatic positioning, and narrative arts to transform creative minds into exceptional modern operational leaders.</p>
+    <a href="#curriculum" class="hero-cta">Enter Student Clubhouse Portal</a>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-label">01 // The Architecture</div>
+      <h2 class="section-heading">Mastery of Form and Expression</h2>
+      <p class="section-desc">H-NOTE Creative Solutions designs advanced operational, narrative, and technological frameworks for students and professionals looking to command their industries.</p>
+      
+      <div class="about-grid">
+        <div class="founder-photo"></div>
+        <div class="founder-text">
+          <div class="founder-name">Randy Lee Hensley — Director &amp; Strategist</div>
+          <h3>Treating Enterprise as a Fine Performance</h3>
+          <p class="founder-bio">With over a decade of dedicated professional development, psychological counseling architectures, and cross-disciplinary system designs, Hensley builds structures that refine authentic presentation, metric tracking, and tactical operational intelligence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academy Curriculum Section -->
+  <section id="curriculum" class="services">
+    <div class="container">
+      <div class="section-label">02 // Student Clubhouse &amp; Portal</div>
+      <h2 class="section-heading">The Academic Curriculum Grid</h2>
+      <p class="section-desc">Explore the standard multi-tiered structural tracks curated within our student ecosystem dashboard to move your visions directly from fine execution to commercial launching points.</p>
+      
+      <div class="services-grid">
+        <!-- Stage 1 -->
+        <div class="service">
+          <div class="service-number">STAGE 01</div>
+          <h3>Tuning Up</h3>
+          <p>Initial alignment and precision orchestration across primary sensory expressions and technical structural principles.</p>
+          <ul class="class-list">
+            <li>• Music and Singing</li>
+            <li>• Dancing and Performing</li>
+            <li>• Writing and Art</li>
+          </ul>
+        </div>
+        <!-- Stage 2 -->
+        <div class="service">
+          <div class="service-number">STAGE 02</div>
+          <h3>Integrating</h3>
+          <p>Fusing performance practices directly into executive frameworks. Merging musical cadence, visual artistry, and spatial presence with operational mechanics.</p>
+          <ul class="class-list">
+            <li>• Strategic Cadence Voice</li>
+            <li>• Spatial Executive Sync</li>
+            <li>• Narrative Brand Form</li>
+          </ul>
+        </div>
+        <!-- Stage 3 -->
+        <div class="service">
+          <div class="service-number">STAGE 03</div>
+          <h3>Professional Development</h3>
+          <p>The operational apex. Students distill their training into structural reality, formulating a complete, production-ready, launch-positioned asset framework.</p>
+          <ul class="class-list">
+            <li>• Structural Asset Model</li>
+            <li>• Production Architecture</li>
+            <li>• Actionable Business Plan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Broadcast Section -->
+  <section class="video-section">
+    <div class="container">
+      <div class="section-label">03 // Signal Stream</div>
+      <h2 class="section-heading">Waking Up Creativity</h2>
+      <p class="section-desc">Watch our principal layout orientation stream covering executive cadence, human friction mechanics, and structural systems.</p>
+      <div class="video-frame">
+        <div class="video-inner">
+          <div class="play-icon">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="video-text">Streaming Narrative Briefing</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Engine Service Embed Section -->
+  <section id="engine" class="services">
+    <div class="container">
+      <div class="section-label">04 // Automated Marketing Service</div>
+      <h2 class="section-heading">The H-Note Nexus Exit Engine</h2>
+      <p class="section-desc">Our high-end market scanning and asset pipeline extraction script is deployed as an automated platform tool. Students use it to scale outreach tracking algorithms instantly.</p>
+      
+      <div class="embed-zone">
+        <div class="embed-header">
+          <div class="embed-title">Streamlit Engine Application Runtime</div>
+          <div class="embed-status">● Live Active Service</div>
+        </div>
+        <div class="embed-accent"></div>
+        <div class="embed-body">
+          <!-- Insert your Streamlit cloud application source URL within the src attribute below -->
+          <iframe src="https://YOUR-STREAMLIT-URL-HERE.streamlit.app/?embed=true" width="100%" height="450px" style="border:none; background:#050505;"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <div class="section-label">05 // Enrollment Models</div>
+      <h2 class="section-heading">Secure Workspace Access</h2>
+      <p class="section-desc">Choose your positioning within the collective architecture. From ongoing student access points to high-level system applications.</p>
+      
+      <div class="pricing-grid">
+        <div class="tier">
+          <div class="tier-label">Student Tier</div>
+          <h3>The Core Portal</h3>
+          <p class="tier-desc">Complete entry to the H-Note Student Clubhouse, full access to Dashboard classes across Stages 1, 2, and 3, and basic platform tracking tools.</p>
+          <ul class="tier-features">
+            <li>Full 3-Stage Course Portal</li>
+            <li>Clubhouse Community Log</li>
+            <li>Basic Narrative Support</li>
+          </ul>
+          <a href="#contact" class="tier-cta tier-cta--outline">Apply For Placement</a>
+        </div>
+        <div class="tier">
+          <div class="tier-label">Premium Service</div>
+          <h3>The Nexus Suite</h3>
+          <p class="tier-desc">Unlocks advanced technical deployment including active optimization access for the H-Note Nexus Exit Engine automated scanning protocols.</p>
+          <ul class="tier-features">
+            <li>Everything in Student Portal</li>
+            <li>Nexus Exit Engine Access</li>
+            <li>Automated Pipeline Tooling</li>
+          </ul>
+          <a href="#contact" class="tier-cta tier-cta--gold">Acquire Engine License</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Footer Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-label">06 // Verification Gateway</div>
+      <h2 class="section-heading">Initiate Verification Sequence</h2>
+      <p class="section-desc">Submit your background details to confirm your placement verification parameters within the remnant database.</p>
+      
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 H-NOTE CREATIVE SOLUTIONS | THE GREAT REMINDER</div>
+        <div class="footer-copy" style="color: var(--gold-dim);">Operational Clearance 44001</div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>  font-size: 0.6rem;
   letter-spacing: var(--tracking);
   color: #333;
   text-transform: uppercase;
