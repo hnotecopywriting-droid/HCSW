@@ -81,23 +81,16 @@ a { color: inherit; text-decoration: none; }
   padding: 6rem 2rem;
   position: relative;
   overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
   background: url('background.png') center center / cover no-repeat;
-  opacity: 0.15;
-  pointer-events: none;
 }
 
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.9) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.95) 100%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .hero > * {
@@ -197,7 +190,7 @@ section { padding: 5rem 2rem; }
   width: 100%;
   aspect-ratio: 3/4;
   border: 1px solid var(--gold-dim);
-  background: url('background.png') center center / cover no-repeat;
+  background: url('Best Randy.jPG') center center / cover no-repeat;
   background-color: var(--charcoal);
 }
 
@@ -323,7 +316,7 @@ section { padding: 5rem 2rem; }
   text-transform: uppercase;
 }
 
-/* Engine Embed Zone Section */
+/* Engine Embed Zone Section (Secured Admin View) */
 .embed-zone {
   margin-top: 2.5rem;
   border: 1px solid var(--border);
@@ -352,24 +345,119 @@ section { padding: 5rem 2rem; }
   font-family: var(--font-sans);
   font-size: 0.58rem;
   letter-spacing: var(--tracking);
-  color: #00ff66;
+  color: #ff3333;
   text-transform: uppercase;
 }
 
 .embed-accent {
   height: 2px;
-  background: linear-gradient(90deg, var(--gold-dim), transparent);
+  background: linear-gradient(90deg, #ff3333, transparent);
 }
 
 .embed-body {
-  min-height: 450px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem;
+  background: #050505;
+}
+
+.secure-icon {
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  overflow: hidden;
-  background: #050505;
+  margin-bottom: 1.5rem;
+  background: #0a0a0a;
 }
+
+.secure-icon svg { width: 24px; height: 24px; fill: var(--gold-dim); }
+
+.secure-title {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.secure-text {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--muted);
+  max-width: 45ch;
+  line-height: 1.6;
+}
+
+/* Clubhouse Authentication Portal Gate */
+.clubhouse-gate {
+  margin-top: 3rem;
+  border: 1px solid var(--border);
+  background: var(--charcoal);
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.auth-tab {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.auth-tab.active, .auth-tab:hover { color: var(--gold); }
+
+.auth-input {
+  width: 100%;
+  background: var(--black);
+  border: 1px solid var(--border);
+  padding: 0.85rem 1rem;
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.auth-input:focus { border-color: var(--gold-dim); outline: none; }
+
+.auth-btn {
+  width: 100%;
+  background: var(--gold);
+  color: var(--black);
+  border: none;
+  padding: 0.9rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.auth-btn:hover { opacity: 0.85; }
 
 /* Pricing Section */
 .pricing { border-top: 1px solid var(--border); }
@@ -487,8 +575,9 @@ section { padding: 5rem 2rem; }
     <div class="nav-brand">H-NOTE ACADEMY</div>
     <ul class="nav-links">
       <li><a href="#about">The Founder</a></li>
-      <li><a href="#curriculum">Academy Portal</a></li>
-      <li><a href="#engine">Nexus Exit Engine</a></li>
+      <li><a href="#curriculum">Student Portal</a></li>
+      <li><a href="#clubhouse">Clubhouse Gate</a></li>
+      <li><a href="#engine">Nexus Architecture</a></li>
       <li><a href="#pricing">Access Models</a></li>
     </ul>
     <div class="nav-brand" style="font-family: var(--font-sans); font-size: 0.65rem; color: var(--muted);">0 1 0 // 44001</div>
@@ -499,7 +588,7 @@ section { padding: 5rem 2rem; }
     <div class="hero-eyebrow">The Professional Remnant Pipeline</div>
     <h1>BUSINESS IS A PERFORMING ART. WAKE UP YOUR CREATIVITY.</h1>
     <p class="hero-sub">Welcome to H-Note Academy. We integrate premium vocal tracking, spatial somatic positioning, and narrative arts to transform creative minds into exceptional modern operational leaders.</p>
-    <a href="#curriculum" class="hero-cta">Enter Student Clubhouse Portal</a>
+    <a href="#curriculum" class="hero-cta">Explore Academy Curriculum</a>
   </header>
 
   <!-- About Section -->
@@ -520,12 +609,12 @@ section { padding: 5rem 2rem; }
     </div>
   </section>
 
-  <!-- Academy Curriculum Section -->
+  <!-- Academy Curriculum Section (No Login Required) -->
   <section id="curriculum" class="services">
     <div class="container">
-      <div class="section-label">02 // Student Clubhouse &amp; Portal</div>
+      <div class="section-label">02 // Open Student Portal</div>
       <h2 class="section-heading">The Academic Curriculum Grid</h2>
-      <p class="section-desc">Explore the standard multi-tiered structural tracks curated within our student ecosystem dashboard to move your visions directly from fine execution to commercial launching points.</p>
+      <p class="section-desc">Review our multi-tiered course paths built directly into our educational frameworks. No authorization required to examine core strategic parameters.</p>
       
       <div class="services-grid">
         <!-- Stage 1 -->
@@ -565,10 +654,31 @@ section { padding: 5rem 2rem; }
     </div>
   </section>
 
+  <!-- Secure Clubhouse Portal Section (Requires Login/Sign-up) -->
+  <section id="clubhouse" class="about" style="background: #020202;">
+    <div class="container">
+      <div class="section-label">03 // Secure Student Workspace</div>
+      <h2 class="section-heading">The Clubhouse Gateway</h2>
+      <p class="section-desc">Authorized members must initialize credentials to log into or establish verification parameters within the interactive Clubhouse ecosystem.</p>
+      
+      <div class="clubhouse-gate">
+        <div class="auth-tabs">
+          <div class="auth-tab active">Sign In</div>
+          <div class="auth-tab">Create Account</div>
+        </div>
+        <form onsubmit="event.preventDefault();">
+          <input type="email" class="auth-input" placeholder="STUDENT DISCOVERY EMAIL" required />
+          <input type="password" class="auth-input" placeholder="SECURE KEYPASS WORD" required />
+          <button type="submit" class="auth-btn">Authorize Node Connection</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- Video Broadcast Section -->
   <section class="video-section">
     <div class="container">
-      <div class="section-label">03 // Signal Stream</div>
+      <div class="section-label">04 // Signal Stream</div>
       <h2 class="section-heading">Waking Up Creativity</h2>
       <p class="section-desc">Watch our principal layout orientation stream covering executive cadence, human friction mechanics, and structural systems.</p>
       <div class="video-frame">
@@ -582,22 +692,25 @@ section { padding: 5rem 2rem; }
     </div>
   </section>
 
-  <!-- Premium Engine Service Embed Section -->
+  <!-- Locked/Proprietary Engine View -->
   <section id="engine" class="services">
     <div class="container">
-      <div class="section-label">04 // Automated Marketing Service</div>
+      <div class="section-label">05 // Proprietary Operational Engine</div>
       <h2 class="section-heading">The H-Note Nexus Exit Engine</h2>
-      <p class="section-desc">Our high-end market scanning and asset pipeline extraction script is deployed as an automated platform tool. Students use it to scale outreach tracking algorithms instantly.</p>
+      <p class="section-desc">Our ultimate, automated market intelligence pipeline. This proprietary stack is run exclusively under administrative authority to formulate premium backend assets for copywriting and fulfillment tracking.</p>
       
       <div class="embed-zone">
         <div class="embed-header">
-          <div class="embed-title">Streamlit Engine Application Runtime</div>
-          <div class="embed-status">● Live Active Service</div>
+          <div class="embed-title">Nexus Engine Deployment Status</div>
+          <div class="embed-status">🔒 RESTRICTED INTERFACE</div>
         </div>
         <div class="embed-accent"></div>
         <div class="embed-body">
-          <!-- Insert your Streamlit cloud application source URL within the src attribute below -->
-          <iframe src="https://YOUR-STREAMLIT-URL-HERE.streamlit.app/?embed=true" width="100%" height="450px" style="border:none; background:#050505;"></iframe>
+          <div class="secure-icon">
+            <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+          </div>
+          <div class="secure-title">Administrative Clearance Required</div>
+          <div class="secure-text">Interactive tool functions are hidden from external view and kept private for bespoke agency operations. Privileged student bypass tokens can be verified by manual authorization.</div>
         </div>
       </div>
     </div>
@@ -606,7 +719,7 @@ section { padding: 5rem 2rem; }
   <!-- Pricing Section -->
   <section id="pricing" class="pricing">
     <div class="container">
-      <div class="section-label">05 // Enrollment Models</div>
+      <div class="section-label">06 // Enrollment Models</div>
       <h2 class="section-heading">Secure Workspace Access</h2>
       <p class="section-desc">Choose your positioning within the collective architecture. From ongoing student access points to high-level system applications.</p>
       
@@ -614,7 +727,7 @@ section { padding: 5rem 2rem; }
         <div class="tier">
           <div class="tier-label">Student Tier</div>
           <h3>The Core Portal</h3>
-          <p class="tier-desc">Complete entry to the H-Note Student Clubhouse, full access to Dashboard classes across Stages 1, 2, and 3, and basic platform tracking tools.</p>
+          <p class="tier-desc">Complete entry to the open Student Portal paths and exclusive access parameters inside the secure Clubhouse network ecosystem.</p>
           <ul class="tier-features">
             <li>Full 3-Stage Course Portal</li>
             <li>Clubhouse Community Log</li>
@@ -625,13 +738,13 @@ section { padding: 5rem 2rem; }
         <div class="tier">
           <div class="tier-label">Premium Service</div>
           <h3>The Nexus Suite</h3>
-          <p class="tier-desc">Unlocks advanced technical deployment including active optimization access for the H-Note Nexus Exit Engine automated scanning protocols.</p>
+          <p class="tier-desc">Acquire bespoke copywriting or automated pipeline service outcomes deployed directly by the Founder utilizing the protected Nexus script framework.</p>
           <ul class="tier-features">
             <li>Everything in Student Portal</li>
-            <li>Nexus Exit Engine Access</li>
-            <li>Automated Pipeline Tooling</li>
+            <li>Bespoke Project Engineering</li>
+            <li>Exclusive Engine Output Fulfillment</li>
           </ul>
-          <a href="#contact" class="tier-cta tier-cta--gold">Acquire Engine License</a>
+          <a href="#contact" class="tier-cta tier-cta--gold">Acquire Engine Services</a>
         </div>
       </div>
     </div>
@@ -640,7 +753,7 @@ section { padding: 5rem 2rem; }
   <!-- Contact Form & Footer Section -->
   <section id="contact" class="contact">
     <div class="container">
-      <div class="section-label">06 // Verification Gateway</div>
+      <div class="section-label">07 // Verification Gateway</div>
       <h2 class="section-heading">Initiate Verification Sequence</h2>
       <p class="section-desc">Submit your background details to confirm your placement verification parameters within the remnant database.</p>
       
