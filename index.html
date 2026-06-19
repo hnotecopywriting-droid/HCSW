@@ -72,6 +72,160 @@ a { color: inherit; text-decoration: none; }
 
 .nav-links a:hover { color: var(--gold); }
 
+/* --- HERO ARCHITECTURE STYLES --- */
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: linear-gradient(135deg, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.55) 100%), url('https://i.ibb.co/7DKNVSk/background.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+}
+
+.hero-left-text {
+  flex: 1.2;
+  min-width: 320px;
+  max-width: 580px;
+}
+
+.hero-eyebrow-tag {
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-main-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.25;
+  margin-bottom: 2rem;
+  color: var(--white);
+  font-family: var(--font-serif);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero-description {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: #f0f0f0;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-main-button {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  padding: 1.1rem 2.75rem;
+  border: 1px solid var(--gold);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.45);
+}
+
+.hero-main-button:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+/* --- FOUNDER CARD STYLES --- */
+.founder-card {
+  flex: 1;
+  min-width: 310px;
+  max-width: 440px;
+  background: rgba(10, 10, 10, 0.75);
+  border: 1px solid rgba(240, 215, 140, 0.25);
+  padding: 3rem 2.5rem;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.founder-card-photo {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 3/4;
+  border: 1px solid var(--gold-dim);
+  background: url('https://i.ibb.co/wm165fj/Best-Randy.jpg') center center / cover no-repeat;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.founder-card-name {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+.founder-card-creds {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--gold-dim);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.founder-card-heading {
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: 0.85rem;
+  color: var(--white);
+  text-align: center;
+  font-family: var(--font-serif);
+  letter-spacing: 0.02em;
+}
+
+.founder-card-bio {
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: #d0d0d0;
+  line-height: 1.75;
+  text-align: center;
+}
+
 /* Layout Grid Standards */
 section { padding: 6rem 2rem; background: var(--black); position: relative; z-index: 5; }
 
@@ -453,50 +607,50 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
     <div class="nav-brand" style="font-family: var(--font-sans); font-size: 0.65rem; color: #666666;">0 1 0 // 44001</div>
   </nav>
 
-  <!-- RECONSTRUCTED HERO CONTAINER WITH TRANSPARENT DEPTH LAYER -->
-  <header style="position: relative; width: 100%; min-height: 100vh; padding-top: 5rem; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border);">
+  <!-- RECONSTRUCTED HERO CONTAINER LAYER -->
+  <header class="hero-wrapper">
     
     <!-- Unified Base Background Image -->
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: linear-gradient(135deg, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.55) 100%), url('https://i.ibb.co/7DKNVSk/background.png'); background-size: cover; background-position: center center; background-repeat: no-repeat; z-index: 1;"></div>
+    <div class="hero-bg"></div>
 
     <!-- Main Content Container -->
-    <div style="position: relative; z-index: 2; width: 100%; max-width: 1200px; display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; justify-content: space-between; padding: 4rem 2rem;">
+    <div class="hero-content">
       
       <!-- Left Column: Typography Alignment & Pitch -->
-      <div style="flex: 1.2; min-width: 320px; max-width: 580px;">
-        <div style="color: var(--gold); font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: var(--tracking); text-transform: uppercase; margin-bottom: 1.5rem; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">
+      <div class="hero-left-text">
+        <div class="hero-eyebrow-tag">
           The Professional Remnant Pipeline
         </div>
-        <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.05em; line-height: 1.25; margin-bottom: 2rem; color: var(--white); font-family: var(--font-serif); text-shadow: 0 2px 8px rgba(0,0,0,0.6);">
+        <h1 class="hero-main-title">
           BUSINESS IS A PERFORMING ART.<br>WAKE UP YOUR CREATIVITY.
         </h1>
-        <p style="font-family: var(--font-sans); font-size: 0.95rem; color: #f0f0f0; line-height: 1.8; margin-bottom: 2.5rem; text-shadow: 0 1px 3px rgba(0,0,0,0.5);">
+        <p class="hero-description">
           Welcome to H-Note Academy. We integrate premium vocal tracking, spatial somatic positioning, and narrative arts to transform creative minds into exceptional modern operational leaders.
         </p>
-        <a href="#gateway" style="display: inline-block; font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600; letter-spacing: var(--tracking); text-transform: uppercase; color: var(--black); background: var(--gold); padding: 1.1rem 2.75rem; border: 1px solid var(--gold); transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.45);" onmouseover="this.style.background='transparent'; this.style.color='var(--gold)';" onmouseout="this.style.background='var(--gold)'; this.style.color='var(--black)';">
+        <a href="#gateway" class="hero-main-button">
           Access Secure System
         </a>
       </div>
 
       <!-- Right Column: Fine-Tuned Executive Card Panel -->
-      <div style="flex: 1; min-width: 310px; max-width: 440px; background: rgba(10, 10, 10, 0.75); border: 1px solid rgba(240, 215, 140, 0.25); padding: 3rem 2.5rem; backdrop-filter: blur(8px); box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);">
+      <div class="founder-card">
         
         <!-- Profile Portrait Container -->
-        <div style="width: 100%; max-width: 260px; aspect-ratio: 3/4; border: 1px solid var(--gold-dim); background: url('https://i.ibb.co/wm165fj/Best-Randy.jpg') center center / cover no-repeat; margin: 0 auto 2rem auto; box-shadow: 0 8px 20px rgba(0,0,0,0.5);"></div>
+        <div class="founder-card-photo"></div>
         
         <!-- Identity Group -->
-        <div style="font-family: var(--font-sans); font-size: 0.65rem; letter-spacing: var(--tracking); text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.4rem; text-align: center;">
+        <div class="founder-card-name">
           Randy Lee Hensley
         </div>
-        <div style="font-family: var(--font-sans); font-size: 0.72rem; color: var(--gold-dim); margin-bottom: 1.5rem; font-weight: 500; text-align: center; letter-spacing: 0.02em;">
+        <div class="founder-card-creds">
           CADC-A | Creative Strategist &amp; Counselor
         </div>
         
         <!-- Editorial Bio Pitch -->
-        <h3 style="font-size: 1.15rem; font-weight: 400; margin-bottom: 0.85rem; color: var(--white); text-align: center; font-family: var(--font-serif); letter-spacing: 0.02em;">
+        <h3 class="founder-card-heading">
           Treating Enterprise as a Fine Performance
         </h3>
-        <p style="font-family: var(--font-sans); font-size: 0.88rem; color: #d0d0d0; line-height: 1.75; text-align: center;">
+        <p class="founder-card-bio">
           With over 12 years of dedicated counseling expertise, human behavior optimization, and strategic organizational alignment, Randy patterns operational architecture that unlocks deep authentic presence.
         </p>
       </div>
