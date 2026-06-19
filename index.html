@@ -70,33 +70,35 @@ a { color: inherit; text-decoration: none; }
 
 .nav-links a:hover { color: var(--gold); }
 
-/* Hero Section */
-.hero {
+/* FIXED: Hard-Locked Side-by-Side Split Hero */
+.hero-split-container {
   min-height: 100vh;
   display: flex;
+  flex-direction: row; /* Forces side-by-side explicitly */
+  padding-top: 5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--black);
+  width: 100%;
+}
+
+.hero-left {
+  flex: 1.2; /* Takes up slightly more space for text readability */
+  display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 6rem 2rem;
-  position: relative;
-  overflow: hidden;
-  background: url('background.png') center center / cover no-repeat;
+  padding: 4rem 4rem 4rem 3rem;
+  background: linear-gradient(135deg, rgba(17,17,17,0.6) 0%, rgba(0,0,0,0.9) 100%), url('background.png') center center / cover no-repeat;
+  border-right: 1px solid var(--border);
 }
 
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.hero > * {
-  position: relative;
-  z-index: 2;
-  text-shadow: 0 2px 15px rgba(0,0,0,0.9);
+.hero-right {
+  flex: 1; /* Takes up equal remaining viewport width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 3rem 4rem 4rem;
+  background: var(--black);
 }
 
 .hero-eyebrow {
@@ -109,25 +111,25 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 1.5rem;
 }
 
-.hero h1 {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+.hero-left h1 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 400;
   letter-spacing: var(--tracking-sm);
-  line-height: 1.15;
-  max-width: 16ch;
+  line-height: 1.2;
   margin-bottom: 1.5rem;
 }
 
 .hero-sub {
   font-family: var(--font-sans);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   color: #e0e0e0;
-  max-width: 50ch;
   line-height: 1.8;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
+  max-width: 48ch;
 }
 
 .hero-cta {
+  align-self: flex-start;
   display: inline-block;
   font-family: var(--font-sans);
   font-size: 0.72rem;
@@ -136,11 +138,56 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   color: var(--black);
   background: var(--gold);
-  padding: 1rem 3rem;
+  padding: 1rem 2.5rem;
   transition: opacity 0.3s, transform 0.3s;
 }
 
 .hero-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+/* Founder Profiler Component */
+.founder-photo {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 3/4;
+  border: 1px solid var(--gold-dim);
+  background: url('Best top Randy.jpg') center center / cover no-repeat;
+  background-color: var(--charcoal);
+  margin-bottom: 2rem;
+}
+
+.founder-name {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.founder-credentials {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--gold-dim);
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.founder-right-text h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.founder-bio {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 45ch;
+}
 
 /* Layout Grid Standards */
 section { padding: 5rem 2rem; }
@@ -174,59 +221,6 @@ section { padding: 5rem 2rem; }
   color: var(--muted);
   line-height: 1.8;
   max-width: 55ch;
-}
-
-/* About Section */
-.about { border-top: 1px solid var(--border); }
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 3.5rem;
-  margin-top: 2.5rem;
-  align-items: start;
-}
-
-.founder-photo {
-  width: 100%;
-  aspect-ratio: 3/4;
-  border: 1px solid var(--gold-dim);
-  background: url('Best top Randy.jpg') center center / cover no-repeat;
-  background-color: var(--charcoal);
-}
-
-.founder-name {
-  font-family: var(--font-sans);
-  font-size: 0.62rem;
-  letter-spacing: var(--tracking);
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.founder-credentials {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  letter-spacing: 0.05em;
-  color: var(--gold-dim);
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-}
-
-.founder-text h3 {
-  font-size: 1.15rem;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.75rem;
-}
-
-.founder-bio {
-  font-family: var(--font-sans);
-  font-size: 0.88rem;
-  color: var(--muted);
-  line-height: 1.8;
-  margin-bottom: 1.25rem;
 }
 
 /* Clean Promotional Advertising Section for Nexus Engine */
@@ -562,55 +556,59 @@ section { padding: 5rem 2rem; }
   text-transform: uppercase;
 }
 
+/* Responsive Overrides */
+@media (max-width: 992px) {
+  .hero-split-container { flex-direction: column; }
+  .hero-left { padding: 4rem 2rem; border-right: none; border-bottom: 1px solid var(--border); }
+  .hero-right { padding: 4rem 2rem; align-items: center; text-align: center; }
+  .founder-photo { margin-left: auto; margin-right: auto; }
+}
+
 @media (max-width: 768px) {
   .nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
-  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .founder-photo { max-width: 280px; margin: 0 auto; }
 }
 </style>
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav class="nav">
     <div class="nav-brand">H-NOTE ACADEMY</div>
     <ul class="nav-links">
-      <li><a href="#about">The Founder</a></li>
+      <li><a href="#gateway">System Entry</a></li>
       <li><a href="#engine">Nexus Intelligence</a></li>
       <li><a href="#pricing">Access Models</a></li>
-      <li><a href="#gateway">System Entry</a></li>
     </ul>
     <div class="nav-brand" style="font-family: var(--font-sans); font-size: 0.65rem; color: #666666;">0 1 0 // 44001</div>
   </nav>
 
-  <header class="hero">
-    <div class="hero-eyebrow">The Professional Remnant Pipeline</div>
-    <h1>BUSINESS IS A PERFORMING ART. WAKE UP YOUR CREATIVITY.</h1>
-    <p class="hero-sub">Welcome to H-Note Academy. We integrate premium vocal tracking, spatial somatic positioning, and narrative arts to transform creative minds into exceptional modern operational leaders.</p>
-    <a href="#gateway" class="hero-cta">Access Secure System</a>
-  </header>
+  <!-- FIXED: Side-by-Side Screen Layout Block -->
+  <header class="hero-split-container">
+    <!-- Left Column: Core Mission Pitch -->
+    <div class="hero-left">
+      <div class="hero-eyebrow">The Professional Remnant Pipeline</div>
+      <h1>BUSINESS IS A PERFORMING ART. WAKE UP YOUR CREATIVITY.</h1>
+      <p class="hero-sub">Welcome to H-Note Academy. We integrate premium vocal tracking, spatial somatic positioning, and narrative arts to transform creative minds into exceptional modern operational leaders.</p>
+      <a href="#gateway" class="hero-cta">Access Secure System</a>
+    </div>
 
-  <section id="about" class="about">
-    <div class="container">
-      <div class="section-label">01 // The Architecture</div>
-      <h2 class="section-heading">Mastery of Form and Expression</h2>
-      <p class="section-desc">H-NOTE Creative Solutions designs advanced operational, narrative, and technological frameworks for students and professionals looking to command their industries.</p>
-      
-      <div class="about-grid">
-        <div class="founder-photo"></div>
-        <div class="founder-text">
-          <div class="founder-name">Randy Lee Hensley</div>
-          <div class="founder-credentials">CADC-A | Creative Strategist &amp; Counselor</div>
-          <h3>Treating Enterprise as a Fine Performance</h3>
-          <p class="founder-bio">With over 12 years of dedicated counseling expertise, human behavior optimization, and strategic organizational alignment, Randy patterns operational architecture that unlocks deep authentic presence. By tracking individual metric performance across diverse cross-disciplinary systems, he guides modern professionals in sharpening technical frameworks and narrative copywriting execution.</p>
-        </div>
+    <!-- Right Column: Founder Profile Identity -->
+    <div class="hero-right">
+      <div class="founder-photo"></div>
+      <div class="founder-right-text">
+        <div class="founder-name">Randy Lee Hensley</div>
+        <div class="founder-credentials">CADC-A | Creative Strategist &amp; Counselor</div>
+        <h3>Treating Enterprise as a Fine Performance</h3>
+        <p class="founder-bio">With over 12 years of dedicated counseling expertise, human behavior optimization, and strategic organizational alignment, Randy patterns operational architecture that unlocks deep authentic presence. He guides modern professionals in sharpening technical frameworks and narrative copywriting execution.</p>
       </div>
     </div>
-  </section>
+  </header>
 
+  <!-- Proprietary Architecture Section -->
   <section id="engine" class="services">
     <div class="container">
-      <div class="section-label">02 // Proprietary Architecture</div>
+      <div class="section-label">01 // Proprietary Architecture</div>
       <h2 class="section-heading">The H-Note Nexus Exit Engine Suite</h2>
       <p class="section-desc">Bespoke operational power, executed behind closed doors to deliver maximum market value.</p>
       
@@ -621,9 +619,10 @@ section { padding: 5rem 2rem; }
     </div>
   </section>
 
+  <!-- Pricing Section -->
   <section id="pricing" class="pricing">
     <div class="container">
-      <div class="section-label">03 // Enrollment Models</div>
+      <div class="section-label">02 // Enrollment Models</div>
       <h2 class="section-heading">Secure Workspace Access</h2>
       <p class="section-desc">Choose your positioning within the collective architecture. From ongoing student access points to high-level system applications.</p>
       
@@ -654,9 +653,10 @@ section { padding: 5rem 2rem; }
     </div>
   </section>
 
+  <!-- Unified Entry Gateway Section -->
   <section id="gateway" class="gateway-section">
     <div class="container">
-      <div class="section-label">04 // Central Verification Node</div>
+      <div class="section-label">03 // Central Verification Node</div>
       <h2 class="section-heading">System Entrance Gateway</h2>
       <p class="section-desc">Input authorized identity tokens to instantiate your custom dashboard space and unlock secure platform panels.</p>
       
@@ -666,6 +666,7 @@ section { padding: 5rem 2rem; }
           <div class="auth-tab" onclick="switchTab('clubhouse')">Clubhouse Gateway</div>
         </div>
         
+        <!-- Student Portal Panel -->
         <div id="panel-portal" class="auth-panel active">
           <form onsubmit="unlockSecureWorkspace(event, 'Student Portal');">
             <input type="text" class="auth-input" placeholder="STUDENT PLACEMENT IDENTIFIER" required />
@@ -674,6 +675,7 @@ section { padding: 5rem 2rem; }
           </form>
         </div>
         
+        <!-- Clubhouse Panel -->
         <div id="panel-clubhouse" class="auth-panel">
           <form onsubmit="unlockSecureWorkspace(event, 'Clubhouse Network');">
             <input type="email" class="auth-input" placeholder="ACCOUNT DISCOVERY EMAIL" required />
@@ -685,8 +687,10 @@ section { padding: 5rem 2rem; }
     </div>
   </section>
 
+  <!-- SECURE HIDDEN WORKSPACE WORK AREA -->
   <div id="unlocked-workspace" class="hidden-workspace">
     
+    <!-- Dynamic Header Notification Widget -->
     <div class="container" style="padding-top: 4rem; padding-bottom: 0;">
       <div class="user-profile-widget">
         <div class="avatar-container"></div>
@@ -694,13 +698,15 @@ section { padding: 5rem 2rem; }
       </div>
     </div>
 
+    <!-- Academy Curriculum Section -->
     <section id="curriculum" class="services">
       <div class="container">
-        <div class="section-label">05 // Private Academic Curriculum Grid</div>
+        <div class="section-label">04 // Private Academic Curriculum Grid</div>
         <h2 class="section-heading">Your Curated Structural Tracks</h2>
         <p class="section-desc">Welcome inside. These assets are now fully loaded and decrypted for active study protocols.</p>
         
         <div class="services-grid">
+          <!-- Stage 1 -->
           <div class="service">
             <div class="service-number">STAGE 01</div>
             <h3>Tuning Up</h3>
@@ -711,6 +717,7 @@ section { padding: 5rem 2rem; }
               <li>• Writing and Art</li>
             </ul>
           </div>
+          <!-- Stage 2 -->
           <div class="service">
             <div class="service-number">STAGE 02</div>
             <h3>Integrating</h3>
@@ -721,6 +728,7 @@ section { padding: 5rem 2rem; }
               <li>• Narrative Brand Form</li>
             </ul>
           </div>
+          <!-- Stage 3 -->
           <div class="service">
             <div class="service-number">STAGE 03</div>
             <h3>Professional Development</h3>
@@ -735,9 +743,10 @@ section { padding: 5rem 2rem; }
       </div>
     </section>
 
+    <!-- Video Broadcast Section -->
     <section class="video-section">
       <div class="container">
-        <div class="section-label">06 // Signal Stream</div>
+        <div class="section-label">05 // Signal Stream</div>
         <h2 class="section-heading">Waking Up Creativity Briefing</h2>
         <p class="section-desc">Exclusive internal stream orientation outlining spatial mechanics, executive tone, and strategic layouts.</p>
         <div class="video-frame">
@@ -752,12 +761,14 @@ section { padding: 5rem 2rem; }
     </section>
   </div>
 
+  <!-- Contact Form & Footer Section -->
   <section id="contact" class="contact">
     <div class="container">
-      <div class="section-label">05 // Secure Pipeline</div>
+      <div class="section-label">06 // Secure Pipeline</div>
       <h2 class="section-heading">Initiate Verification Sequence</h2>
       <p class="section-desc">Submit your background details to confirm your placement verification parameters within the remnant database.</p>
       
+      <!-- Footer Bottom Bar -->
       <div class="footer-bottom">
         <div class="footer-copy">© 2026 H-NOTE CREATIVE SOLUTIONS | THE GREAT REMINDER</div>
         <div class="footer-copy" style="color: var(--gold-dim); font-size: 0.62rem;">
@@ -767,6 +778,7 @@ section { padding: 5rem 2rem; }
     </div>
   </section>
 
+  <!-- System Automation Logic Controls -->
   <script>
     function switchTab(type) {
       const tabs = document.querySelectorAll('.auth-tab');
