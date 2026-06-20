@@ -75,7 +75,6 @@ a { color: inherit; text-decoration: none; }
   padding: 0;
 }
 
-/* Dropdown Parent (The Pancake Trigger) */
 .dropdown-parent {
   position: relative;
 }
@@ -97,13 +96,12 @@ a { color: inherit; text-decoration: none; }
   color: var(--gold);
 }
 
-/* Expanded Matrix Pancake Panel (4 Columns for Future Apps & Scaled Services) */
 .pancake-menu {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  width: 880px; /* Expanded horizontally to accommodate the comprehensive business stack cleanly */
+  width: 880px;
   background: rgba(10, 10, 10, 0.98);
   border: 1px solid rgba(240, 215, 140, 0.15);
   box-shadow: 0 20px 40px rgba(0,0,0,0.8);
@@ -163,7 +161,6 @@ a { color: inherit; text-decoration: none; }
   transform: translateX(3px);
 }
 
-/* Nav Action Buttons */
 .nav-actions {
   display: flex;
   align-items: center;
@@ -296,9 +293,6 @@ a { color: inherit; text-decoration: none; }
   color: var(--gold);
 }
 
-/* ==========================================================================
-   FOUNDER CARD STYLES
-   ========================================================================== */
 .founder-card {
   flex: 1;
   min-width: 310px;
@@ -363,7 +357,7 @@ a { color: inherit; text-decoration: none; }
 section { padding: 6rem 2rem; background: var(--black); position: relative; z-index: 5; }
 
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -391,29 +385,118 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
   color: var(--muted);
   line-height: 1.8;
   max-width: 58ch;
+  margin-bottom: 3rem;
 }
 
-/* Promotional Highlighting */
-.promo-highlight {
-  margin-top: 2.5rem;
-  padding: 3rem;
-  border-left: 2px solid var(--gold);
+/* ==========================================================================
+   NEW SPLIT-THEATER ARCHITECTURE (SECTION 01)
+   ========================================================================== */
+.theater-grid {
+  display: flex;
+  gap: 3.5rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.theater-left-video {
+  flex: 1.4;
+  min-width: 320px;
+}
+
+.theater-video-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Clean 16:9 Cinema Aspect Ratio */
+  border: 1px solid rgba(240, 215, 140, 0.3);
   background: var(--charcoal);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.7);
 }
 
-.promo-highlight h3 {
+.theater-video-inner {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+  background: linear-gradient(180deg, rgba(17,17,17,0.4) 0%, rgba(5,5,5,0.85) 100%);
+  transition: background 0.3s ease;
+}
+
+.theater-video-inner:hover {
+  background: linear-gradient(180deg, rgba(17,17,17,0.2) 0%, rgba(5,5,5,0.7) 100%);
+}
+
+.theater-play-icon {
+  width: 64px;
+  height: 64px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(240, 215, 140, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.theater-video-inner:hover .theater-play-icon {
+  transform: scale(1.08);
+}
+
+.theater-play-icon svg { width: 22px; height: 22px; fill: var(--gold); margin-left: 3px; }
+
+.theater-video-title {
   font-family: var(--font-sans);
-  font-size: 1.1rem;
-  letter-spacing: var(--tracking-sm);
-  color: var(--gold);
+  font-size: 0.68rem;
+  letter-spacing: var(--tracking);
+  color: var(--white);
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
-.promo-highlight p {
-  font-size: 0.95rem;
-  color: var(--white);
-  line-height: 1.8;
+.theater-right-briefs {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brief-card {
+  background: var(--charcoal);
+  border: 1px solid var(--border);
+  padding: 1.75rem 2rem;
+  transition: border-color 0.3s ease;
+}
+
+.brief-card:hover {
+  border-color: rgba(240, 215, 140, 0.25);
+}
+
+.brief-tag {
+  font-family: var(--font-sans);
+  font-size: 0.55rem;
+  color: var(--gold-dim);
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.brief-card h3 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.brief-card p {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 /* Pricing Section */
@@ -604,9 +687,7 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
   font-weight: 600;
 }
 
-/* Services Grid */
-.services { border-top: 1px solid var(--border); }
-
+/* Services Grid inside unlocked panel */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -659,48 +740,6 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
   margin-bottom: 0.35rem;
 }
 
-/* Video Section */
-.video-section { border-top: 1px solid var(--border); }
-
-.video-frame {
-  margin-top: 2rem;
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%;
-  border: 1px solid var(--gold-dim);
-  background: var(--charcoal);
-}
-
-.video-inner {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.play-icon {
-  width: 48px;
-  height: 48px;
-  border: 1px solid var(--gold-dim);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.play-icon svg { width: 16px; height: 16px; fill: var(--gold); margin-left: 2px; }
-
-.video-text {
-  font-family: var(--font-sans);
-  font-size: 0.65rem;
-  letter-spacing: var(--tracking);
-  color: var(--muted);
-  text-transform: uppercase;
-}
-
 /* Contact & Footer */
 .contact { 
   border-top: 1px solid var(--border);
@@ -731,23 +770,15 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
 
   <!-- Navigation Framework -->
   <nav class="nav">
-    <!-- Left Side: Brand Logo Vector Point -->
     <div class="nav-brand-logo">
       <img src="best Logo.JPG" alt="H-Note Creative Solutions Logo">
     </div>
 
-    <!-- Center/Right Side: Global System Dropdown Matrix -->
     <div class="nav-menu-wrapper">
       <ul class="nav-links">
-        
-        <!-- Services Multi-Column Dropdown -->
         <li class="dropdown-parent">
           <a href="#engine">Services ▾</a>
-          
-          <!-- Optimized 4-Column Minimalist Stack -->
           <div class="pancake-menu">
-            
-            <!-- Column 1: The Condensed Nexus Hub -->
             <div class="pancake-column">
               <div class="pancake-menu-header">Nexus Systems</div>
               <ul>
@@ -756,8 +787,6 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
                 <li><a href="#engine">Script Optimization</a></li>
               </ul>
             </div>
-
-            <!-- Column 2: Core Human & Clinical Strategy -->
             <div class="pancake-column">
               <div class="pancake-menu-header">Counseling &amp; Strategy</div>
               <ul>
@@ -766,8 +795,6 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
                 <li><a href="#engine">Somatic Performance</a></li>
               </ul>
             </div>
-
-            <!-- Column 3: High-End Digital Engineering -->
             <div class="pancake-column">
               <div class="pancake-menu-header">Digital Architecture</div>
               <ul>
@@ -776,8 +803,6 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
                 <li><a href="#engine">UI/UX Optimization</a></li>
               </ul>
             </div>
-
-            <!-- Column 4: Private Education Parameters -->
             <div class="pancake-column">
               <div class="pancake-menu-header">Academy Tracks</div>
               <ul>
@@ -786,13 +811,10 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
                 <li><a href="#unlocked-workspace">System Orientation</a></li>
               </ul>
             </div>
-
           </div>
         </li>
-
       </ul>
 
-      <!-- Far Right Access Triggers -->
       <div class="nav-actions">
         <a href="#gateway" onclick="switchTab('clubhouse')" class="nav-btn nav-btn--outline">Clubhouse Login / Sign-Up</a>
         <a href="#gateway" onclick="switchTab('portal')" class="nav-btn nav-btn--gold">Student Login</a>
@@ -800,64 +822,70 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
     </div>
   </nav>
 
-  <!-- Hero Container Layer -->
+  <!-- Hero Layer -->
   <header class="hero-wrapper">
-    <!-- Unified Base Background Image -->
     <div class="hero-bg"></div>
-
-    <!-- Main Content Container -->
     <div class="hero-content">
-      <!-- Left Column: Typography Alignment & Pitch -->
       <div class="hero-left-text">
-        <div class="hero-eyebrow-tag">
-          The Professional Remnant Pipeline
-        </div>
-        <h1 class="hero-main-title">
-          BUSINESS IS A PERFORMING ART.<br>WAKE UP YOUR CREATIVITY.
-        </h1>
-        <p class="hero-description">
-          Welcome to H-Note Academy. We integrate premium vocal tracking, spatial somatic positioning, and narrative arts to transform creative minds into exceptional modern operational leaders.
-        </p>
-        <a href="#gateway" class="hero-main-button">
-          Access Secure System
-        </a>
+        <div class="hero-eyebrow-tag">The Professional Remnant Pipeline</div>
+        <h1 class="hero-main-title">BUSINESS IS A PERFORMING ART.<br>WAKE UP YOUR CREATIVITY.</h1>
+        <p class="hero-description">Welcome to H-Note Academy. We integrate premium vocal tracking, spatial somatic positioning, and narrative arts to transform creative minds into exceptional modern operational leaders.</p>
+        <a href="#gateway" class="hero-main-button">Access Secure System</a>
       </div>
 
-      <!-- Right Column: Fine-Tuned Executive Card Panel -->
       <div class="founder-card">
-        <!-- Profile Portrait Container -->
         <div class="founder-card-photo"></div>
-        
-        <!-- Identity Group -->
-        <div class="founder-card-name">
-          Randy Lee Hensley
-        </div>
-        <div class="founder-card-creds">
-          CADC-A | Creative Strategist &amp; Counselor
-        </div>
-        
-        <!-- Editorial Bio Pitch -->
-        <h3 class="founder-card-heading">
-          Treating Enterprise as a Fine Performance
-        </h3>
-        <p class="founder-card-bio">
-          With over 12 years of dedicated counseling expertise, human behavior optimization, and strategic organizational alignment, Randy patterns operational architecture that unlocks deep authentic presence.
-        </p>
+        <div class="founder-card-name">Randy Lee Hensley</div>
+        <div class="founder-card-creds">CADC-A | Creative Strategist &amp; Counselor</div>
+        <h3 class="founder-card-heading">Treating Enterprise as a Fine Performance</h3>
+        <p class="founder-card-bio">With over 12 years of dedicated counseling expertise, human behavior optimization, and strategic organizational alignment, Randy patterns operational architecture that unlocks deep authentic presence.</p>
       </div>
     </div>
   </header>
 
-  <!-- Proprietary Architecture Section -->
-  <section id="engine" class="services">
+  <!-- SECTION 01: SPLIT EXECUTIVE THEATER & BRIEFING LOUNGE -->
+  <section id="engine" style="border-bottom: 1px solid var(--border);">
     <div class="container">
-      <div class="section-label">01 // Proprietary Architecture</div>
-      <h2 class="section-heading">The H-Note Nexus Exit Engine Suite</h2>
-      <p class="section-desc">Bespoke operational power, executed behind closed doors to deliver maximum market value.</p>
+      <div class="section-label">01 // System Overview &amp; Capabilities</div>
+      <h2 class="section-heading">Operational Frameworks &amp; Media Briefing</h2>
+      <p class="section-desc">Experience the core performance philosophy of H-Note or evaluate our specialized delivery matrices below.</p>
       
-      <div class="promo-highlight">
-        <h3>Backend Automation Power</h3>
-        <p>The Nexus Exit Engine represents our premier proprietary framework—an isolated system designed explicitly to run complex market analysis, script optimization, and ultimate high-speed conversion copywriting. By retaining this platform exclusively within administrative operations, we maintain an unparalleled creative edge, utilizing its data pipelines to build bespoke agency assets for direct executive execution.</p>
+      <div class="theater-grid">
+        <!-- Left Side: Immersive Philosophy Broadcast (Elevated Video Stage) -->
+        <div class="theater-left-video">
+          <div class="theater-video-frame">
+            <div class="theater-video-inner">
+              <div class="theater-play-icon">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div class="theater-video-title">Play Orientation: Waking Up Creativity</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Clean, Minimized Service Pillars -->
+        <div class="theater-right-briefs">
+          <!-- Pillar 1 -->
+          <div class="brief-card">
+            <div class="brief-tag">Human Optimization</div>
+            <h3>Business Counseling &amp; Strategy</h3>
+            <p>Clinical-grade behavioral expertise tailored for executive leaders. We treat corporate development as a spatial, fine-art performance.</p>
+          </div>
+          <!-- Pillar 2 -->
+          <div class="brief-card">
+            <div class="brief-tag">Digital Design</div>
+            <h3>Premium Web Engineering</h3>
+            <p>Bespoke interactive design blueprints optimized for absolute elite aesthetic authority, fast execution, and seamless UI styling.</p>
+          </div>
+          <!-- Pillar 3 -->
+          <div class="brief-card">
+            <div class="brief-tag">Proprietary Backend</div>
+            <h3>The H-Note Nexus Engine</h3>
+            <p>Bespoke operational copy and script conversion infrastructure managed strictly inside closed administrative operations.</p>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -908,7 +936,6 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
           <div id="tab-clubhouse" class="auth-tab" onclick="switchTab('clubhouse')">Clubhouse Gateway</div>
         </div>
         
-        <!-- Student Portal Panel -->
         <div id="panel-portal" class="auth-panel active">
           <form onsubmit="unlockSecureWorkspace(event, 'Student Portal');">
             <input type="text" class="auth-input" placeholder="STUDENT PLACEMENT IDENTIFIER" required />
@@ -917,7 +944,6 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
           </form>
         </div>
         
-        <!-- Clubhouse Panel -->
         <div id="panel-clubhouse" class="auth-panel">
           <form onsubmit="unlockSecureWorkspace(event, 'Clubhouse Network');">
             <input type="email" class="auth-input" placeholder="ACCOUNT DISCOVERY EMAIL" required />
@@ -931,7 +957,6 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
 
   <!-- Secure Hidden Workspace Area -->
   <div id="unlocked-workspace" class="hidden-workspace">
-    <!-- Dynamic Header Notification Widget -->
     <div class="container" style="padding-top: 4rem; padding-bottom: 0;">
       <div class="user-profile-widget">
         <div class="avatar-container"></div>
@@ -940,14 +965,13 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
     </div>
 
     <!-- Academy Curriculum Section -->
-    <section id="curriculum" class="services">
+    <section id="curriculum" style="border-bottom: 1px solid var(--border);">
       <div class="container">
         <div class="section-label">04 // Private Academic Curriculum Grid</div>
         <h2 class="section-heading">Your Curated Structural Tracks</h2>
         <p class="section-desc">Welcome inside. These assets are now fully loaded and decrypted for active study protocols.</p>
         
         <div class="services-grid">
-          <!-- Stage 1 -->
           <div class="service">
             <div class="service-number">STAGE 01</div>
             <h3>Tuning Up</h3>
@@ -958,7 +982,6 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
               <li>• Writing and Art</li>
             </ul>
           </div>
-          <!-- Stage 2 -->
           <div class="service">
             <div class="service-number">STAGE 02</div>
             <h3>Integrating</h3>
@@ -969,7 +992,6 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
               <li>• Narrative Brand Form</li>
             </ul>
           </div>
-          <!-- Stage 3 -->
           <div class="service">
             <div class="service-number">STAGE 03</div>
             <h3>Professional Development</h3>
@@ -983,33 +1005,15 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
         </div>
       </div>
     </section>
-
-    <!-- Video Broadcast Section -->
-    <section class="video-section">
-      <div class="container">
-        <div class="section-label">05 // Signal Stream</div>
-        <h2 class="section-heading">Waking Up Creativity Briefing</h2>
-        <p class="section-desc">Exclusive internal stream orientation outlining spatial mechanics, executive tone, and strategic layouts.</p>
-        <div class="video-frame">
-          <div class="video-inner">
-            <div class="play-icon">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-            <div class="video-text">Streaming Private Narrative Feed</div>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>
 
   <!-- Contact Form & Footer Section -->
   <section id="contact" class="contact">
     <div class="container">
-      <div class="section-label">06 // Secure Pipeline</div>
+      <div class="section-label">05 // Secure Pipeline</div>
       <h2 class="section-heading">Initiate Verification Sequence</h2>
       <p class="section-desc">Submit your background details to confirm your placement verification parameters within the remnant database.</p>
       
-      <!-- Footer Bottom Bar -->
       <div class="footer-bottom">
         <div class="footer-copy">© 2026 H-NOTE CREATIVE SOLUTIONS | THE GREAT REMINDER</div>
         <div class="footer-copy" style="color: var(--gold-dim); font-size: 0.62rem;">
@@ -1036,12 +1040,9 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
 
     function unlockSecureWorkspace(event, sessionTypeName) {
       event.preventDefault();
-      
       document.getElementById('active-session-title').innerText = sessionTypeName;
-      
       const workspace = document.getElementById('unlocked-workspace');
       workspace.style.display = 'block';
-      
       setTimeout(() => {
         workspace.scrollIntoView({ behavior: 'smooth' });
       }, 100);
