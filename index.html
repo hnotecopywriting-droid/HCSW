@@ -12,47 +12,154 @@
             background: url('space-media-746582-prod.jpeg') no-repeat center center fixed; 
             background-size: cover;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            position: relative;
         }
-        .overlay {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 40px;
+        
+        /* Top Navigation/Branding Area */
+        .top-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .logo-text {
+            color: #ffca28;
+            font-size: 1.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .login-btn {
             border: 1px solid #ffca28;
-            border-radius: 15px;
+            color: #ffca28;
+            padding: 8px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+        .login-btn:hover {
+            background: #ffca28;
+            color: #000;
+        }
+
+        /* Central Glassmorphic Interface Card */
+        .overlay {
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(5px);
+            padding: 40px;
+            border: 1px solid rgba(255, 202, 40, 0.3);
+            border-radius: 12px;
             text-align: center;
-            max-width: 800px;
+            max-width: 850px;
+            width: 90%;
             color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
-        h1 { color: #ffca28; margin-bottom: 10px; }
-        .grid { display: flex; gap: 40px; margin-top: 30px; }
-        .card { flex: 1; padding: 20px; border: 1px solid #6a1b9a; background: rgba(26, 26, 46, 0.6); border-radius: 10px; }
+        
+        h1 { 
+            color: #ffca28; 
+            margin-bottom: 15px; 
+            font-size: 2.2em;
+            letter-spacing: 1px;
+        }
+        p.subtitle {
+            color: #cccccc;
+            margin-bottom: 40px;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        
+        /* Dual-Path Architecture Grid */
+        .grid { 
+            display: flex; 
+            gap: 30px; 
+        }
+        .card { 
+            flex: 1; 
+            padding: 30px 20px; 
+            border: 1px solid rgba(106, 27, 154, 0.5); 
+            background: rgba(20, 20, 35, 0.6); 
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card h3 {
+            color: #ffca28;
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+        .card p {
+            color: #e0e0e0;
+            font-size: 0.95em;
+            line-height: 1.4;
+            margin-bottom: 25px;
+        }
+        
+        /* Interactive Access Buttons */
         .btn { 
-            display: block; margin-top: 20px; padding: 12px; background: #6a1b9a; 
-            color: white; text-decoration: none; border-radius: 5px; font-weight: bold; 
+            display: block; 
+            padding: 12px; 
+            border: 1px solid #ffca28;
+            background: transparent; 
+            color: #ffca28; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            letter-spacing: 1px;
+            transition: 0.3s; 
         }
-        .btn:hover { background: #ffca28; color: #000; }
-        .login-top { position: absolute; top: 20px; right: 20px; color: #ffca28; font-weight: bold; }
+        .btn:hover { 
+            background: #ffca28; 
+            color: #000; 
+        }
+
+        /* Responsive breakdown for smaller windows */
+        @media (max-width: 768px) {
+            body { height: auto; padding: 100px 20px 40px 20px; }
+            .grid { flex-direction: column; gap: 20px; }
+            .top-bar { position: fixed; background: rgba(0,0,0,0.9); }
+        }
     </style>
 </head>
 <body>
 
-    <div class="login-top">LOGIN / SIGN-UP</div>
+    <!-- Upper Branding and Navigation Shell -->
+    <div class="top-bar">
+        <div class="logo-text">H-Note</div>
+        <a href="#" class="login-btn">LOGIN / SIGN-UP</a>
+    </div>
 
+    <!-- Main Workspace Core Architecture -->
     <div class="overlay">
         <h1>ACCESS THE ORCHESTRATION</h1>
-        <p>Position your access within the collective architecture. Your options for ongoing student support and high-level social systems.</p>
+        <p class="subtitle">POSITION YOUR ACCESS WITHIN THE COLLECTIVE ARCHITECTURE. YOUR OPTIONS FOR ONGOING STUDENT SUPPORT AND HIGH-LEVEL SOCIAL SYSTEMS.</p>
 
         <div class="grid">
+            <!-- Left Node: Social Infrastructure -->
             <div class="card">
-                <h3>The Club House</h3>
-                <p>Access your social networking space. Full Clubhouse Community Log. Event Streams & Support.</p>
+                <div>
+                    <h3>The Club House</h3>
+                    <p>Access your social networking space. Full Clubhouse Community Log. Event Streams & Support.</p>
+                </div>
                 <a href="clubhouse/index.html" class="btn">ENTER CLUB HOUSE</a>
             </div>
+            
+            <!-- Right Node: Educational Infrastructure -->
             <div class="card">
-                <h3>Student Portal</h3>
-                <p>Access your courses and course materials. Complete entry to open Student Portal paths.</p>
+                <div>
+                    <h3>Student Portal</h3>
+                    <p>Access your courses and course materials. Complete entry to open Student Portal paths.</p>
+                </div>
                 <a href="students_portal/dashboard.html" class="btn">ENTER PORTAL</a>
             </div>
         </div>
