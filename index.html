@@ -216,7 +216,7 @@ a { color: inherit; text-decoration: none; }
 .hero-bg {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-image: linear-gradient(135deg, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.55) 100%), url('https://i.ibb.co/7DKNVSk/background.png');
+  background-image: linear-gradient(135deg, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.55) 100%), url('space-media-746582-prod.jpeg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -569,6 +569,7 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
   padding: 1rem 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .tier-cta:hover { transform: translateY(-2px); opacity: 0.9; }
@@ -843,7 +844,7 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
     </div>
   </header>
 
-  <!-- SECTION 01: WELCOME & SERVICE PILLARS WITH PURPLE PERFORMANCE BACKGROUND (HIGH BRIGHTNESS AND CONTRAST) -->
+  <!-- SECTION 01: WELCOME & SERVICE PILLARS WITH PURPLE PERFORMANCE BACKGROUND -->
   <section id="engine" style="
     position: relative;
     border-bottom: 1px solid var(--border);
@@ -872,21 +873,18 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
           </div>
         </div>
 
-        <!-- Right Side: High-Contrast Pure Black Service Pillars -->
+        <!-- Right Side: Service Pillars -->
         <div class="theater-right-briefs">
-          <!-- Pillar 1 -->
           <div class="brief-card" style="background: #000000; border: 1px solid rgba(255, 255, 255, 0.25); box-shadow: 0 15px 30px rgba(0,0,0,0.75);">
             <div class="brief-tag" style="color: var(--gold); font-weight: 800;">Counseling &amp; Mentorship</div>
             <h3 style="color: #ffffff; font-weight: 600;">Business Counseling</h3>
             <p style="color: #eeeeee; font-weight: 400;">Practical, human-first guidance for professionals and creatives. We focus on personal growth, mindset, and balancing your well-being with your professional goals.</p>
           </div>
-          <!-- Pillar 2 -->
           <div class="brief-card" style="background: #000000; border: 1px solid rgba(255, 255, 255, 0.25); box-shadow: 0 15px 30px rgba(0,0,0,0.75);">
-            <div class="brief-tag style="color: var(--gold); font-weight: 800;">Design &amp; Build</div>
+            <div class="brief-tag" style="color: var(--gold); font-weight: 800;">Design &amp; Build</div>
             <h3 style="color: #ffffff; font-weight: 600;">Web Design &amp; Consulting</h3>
             <p style="color: #eeeeee; font-weight: 400;">Clean, elegant, and functional websites built to give your ideas a solid home online. No over-complication—just clean layouts that work.</p>
           </div>
-          <!-- Pillar 3 -->
           <div class="brief-card" style="background: #000000; border: 1px solid rgba(255, 255, 255, 0.25); box-shadow: 0 15px 30px rgba(0,0,0,0.75);">
             <div class="brief-tag" style="color: var(--gold); font-weight: 800;">Creative Writing</div>
             <h3 style="color: #ffffff; font-weight: 600;">The Nexus Services</h3>
@@ -926,7 +924,7 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
             <li>Bespoke Project Engineering</li>
             <li>Exclusive Engine Output Fulfillment</li>
           </ul>
-          <a href="#gateway" class="tier-cta tier-cta--gold">Acquire Engine Services</a>
+          <a href="#gateway" onclick="switchTab('clubhouse')" class="tier-cta tier-cta--gold">Acquire Engine Services</a>
         </div>
       </div>
     </div>
@@ -946,7 +944,7 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
         </div>
         
         <div id="panel-portal" class="auth-panel active">
-          <form onsubmit="unlockSecureWorkspace(event, 'Student Portal');">
+          <form onsubmit="handleSecureRouting(event, 'portal');">
             <input type="text" class="auth-input" placeholder="STUDENT PLACEMENT IDENTIFIER" required />
             <input type="password" class="auth-input" placeholder="ACCESS PIN KEY" required />
             <button type="submit" class="auth-btn">Initialize Portal Session</button>
@@ -954,7 +952,7 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
         </div>
         
         <div id="panel-clubhouse" class="auth-panel">
-          <form onsubmit="unlockSecureWorkspace(event, 'Clubhouse Network');">
+          <form onsubmit="handleSecureRouting(event, 'clubhouse');">
             <input type="email" class="auth-input" placeholder="ACCOUNT DISCOVERY EMAIL" required />
             <input type="password" class="auth-input" placeholder="SECURE TERMINAL KEY" required />
             <button type="submit" class="auth-btn">Authorize Node Connection</button>
@@ -1047,14 +1045,22 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
       document.getElementById('panel-' + type).classList.add('active');
     }
 
-    function unlockSecureWorkspace(event, sessionTypeName) {
+    function handleSecureRouting(event, destinationType) {
       event.preventDefault();
-      document.getElementById('active-session-title').innerText = sessionTypeName;
+      
+      // Flash verification visual sequence state locally first
+      document.getElementById('active-session-title').innerText = destinationType === 'portal' ? 'Student Portal' : 'Clubhouse Network';
       const workspace = document.getElementById('unlocked-workspace');
       workspace.style.display = 'block';
+      
+      // Smooth window focus transition, then securely relocate the client pipeline direction
       setTimeout(() => {
-        workspace.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+        if (destinationType === 'portal') {
+          window.location.href = "students_portal/dashboard.html";
+        } else {
+          window.location.href = "clubhouse/index.html";
+        }
+      }, 750);
     }
   </script>
 </body>
