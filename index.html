@@ -807,8 +807,8 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
             <div class="pancake-column">
               <div class="pancake-menu-header">Academy Tracks</div>
               <ul>
-                <li><a href="#curriculum">Business Courses</a></li>
-                <li><a href="#curriculum">Creative Leadership</a></li>
+                <li><a href="#unlocked-workspace">Business Courses</a></li>
+                <li><a href="#unlocked-workspace">Creative Leadership</a></li>
                 <li><a href="#unlocked-workspace">System Orientation</a></li>
               </ul>
             </div>
@@ -859,7 +859,7 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
       <div class="section-label" style="text-shadow: 0 2px 5px rgba(0,0,0,1); color: var(--gold); font-weight: 700;">01 // Introduction</div>
       <h2 class="section-heading" style="text-shadow: 0 3px 10px rgba(0,0,0,1); color: #ffffff; font-weight: 700;">Welcome to the H-Note. Are you ready to go to the next level?</h2>
       <p class="section-desc" style="color: #ffffff; text-shadow: 0 2px 6px rgba(0,0,0,1); font-weight: 600; max-width: 65ch; margin-bottom: 3rem;">Take a moment to watch the video below for a quick introduction to the approach, or look through the core areas where we can work together.</p>
-      
+       
       <div class="theater-grid">
         <!-- Left Side: Personal Welcome Video Frame -->
         <div class="theater-left-video">
@@ -902,7 +902,7 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
       <div class="section-label">02 // Enrollment Models</div>
       <h2 class="section-heading">Secure Workspace Access</h2>
       <p class="section-desc">Choose your positioning within the collective architecture. From ongoing student access points to high-level system applications.</p>
-      
+       
       <div class="pricing-grid">
         <div class="tier">
           <div class="tier-label">Student Tier</div>
@@ -936,13 +936,13 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
       <div class="section-label">03 // Central Verification Node</div>
       <h2 class="section-heading">System Entrance Gateway</h2>
       <p class="section-desc">Input authorized identity tokens to instantiate your custom dashboard space and unlock secure platform panels.</p>
-      
+       
       <div class="terminal-gate">
         <div class="auth-tabs">
           <div id="tab-portal" class="auth-tab active" onclick="switchTab('portal')">Log In Student Portal</div>
           <div id="tab-clubhouse" class="auth-tab" onclick="switchTab('clubhouse')">Clubhouse Gateway</div>
         </div>
-        
+         
         <div id="panel-portal" class="auth-panel active">
           <form onsubmit="handleSecureRouting(event, 'portal');">
             <input type="text" class="auth-input" placeholder="STUDENT PLACEMENT IDENTIFIER" required />
@@ -950,7 +950,7 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
             <button type="submit" class="auth-btn">Initialize Portal Session</button>
           </form>
         </div>
-        
+         
         <div id="panel-clubhouse" class="auth-panel">
           <form onsubmit="handleSecureRouting(event, 'clubhouse');">
             <input type="email" class="auth-input" placeholder="ACCOUNT DISCOVERY EMAIL" required />
@@ -977,7 +977,7 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
         <div class="section-label">04 // Private Academic Curriculum Grid</div>
         <h2 class="section-heading">Your Curated Structural Tracks</h2>
         <p class="section-desc">Welcome inside. These assets are now fully loaded and decrypted for active study protocols.</p>
-        
+         
         <div class="services-grid">
           <div class="service">
             <div class="service-number">STAGE 01</div>
@@ -1020,7 +1020,7 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
       <div class="section-label">05 // Secure Pipeline</div>
       <h2 class="section-heading">Initiate Verification Sequence</h2>
       <p class="section-desc">Submit your background details to confirm your placement verification parameters within the remnant database.</p>
-      
+       
       <div class="footer-bottom">
         <div class="footer-copy">© 2026 H-NOTE CREATIVE SOLUTIONS | THE GREAT REMINDER</div>
         <div class="footer-copy" style="color: var(--gold-dim); font-size: 0.62rem;">
@@ -1048,19 +1048,17 @@ section { padding: 6rem 2rem; background: var(--black); position: relative; z-in
     function handleSecureRouting(event, destinationType) {
       event.preventDefault();
       
-      // Flash verification visual sequence state locally first
+      // Update the structural state label dynamically inside the unlocked layout zone
       document.getElementById('active-session-title').innerText = destinationType === 'portal' ? 'Student Portal' : 'Clubhouse Network';
+      
+      // Instantly bring up the hidden dashboard container on the live index build file directly
       const workspace = document.getElementById('unlocked-workspace');
       workspace.style.display = 'block';
       
-      // Smooth window focus transition, then securely relocate the client pipeline direction
+      // Trigger a clean, native smooth scroll sequence targeted right onto the unlocked track grid
       setTimeout(() => {
-        if (destinationType === 'portal') {
-          window.location.href = "students_portal/dashboard.html";
-        } else {
-          window.location.href = "clubhouse/index.html";
-        }
-      }, 750);
+        workspace.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
     }
   </script>
 </body>
