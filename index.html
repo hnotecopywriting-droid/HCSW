@@ -506,24 +506,30 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
 }
 
 /* ==========================================================================
-   PAGE 3: PRICING & EMBEDDED ENTRY PORTALS (image_707b41.jpg Layout)
+   PAGE 3: PRICING & EMBEDDED ENTRY PORTALS ( space-media-746582-prod.jpeg )
    ========================================================================== */
-.pricing-section-container {
+#pricing {
   position: relative;
-  background: linear-gradient(180deg, rgba(5,5,5,0.1) 0%, rgba(5,5,5,0.3) 100%), url('image_707b41.jpg') center center / cover no-repeat;
-  padding: 7rem 2rem;
   width: 100%;
+  min-height: 100vh;
+  padding: 7rem 2rem;
+  background-image: linear-gradient(180deg, rgba(5,5,5,0.45) 0%, rgba(5,5,5,0.65) 100%), url('space-media-746582-prod.jpeg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 .orchestration-box {
-  background: rgba(15, 15, 15, 0.78);
-  backdrop-filter: blur(10px);
+  background: rgba(15, 15, 15, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 3.5rem 2rem;
   max-width: 1100px;
   margin: 0 auto;
   text-align: center;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.85);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.9);
 }
 
 .orchestration-title {
@@ -556,7 +562,7 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
 }
 
 .tier {
-  background: rgba(5, 5, 5, 0.92);
+  background: rgba(5, 5, 5, 0.95);
   border: 1px solid rgba(240, 215, 140, 0.35);
   padding: 3rem 2.5rem;
   display: flex;
@@ -587,11 +593,22 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
   margin-bottom: 2rem;
 }
 
-/* Inline Terminal Input Styling */
+/* Embedded Form Block Within Container Card */
 .gateway-form-block {
   margin-top: auto;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.auth-label-heading {
+  font-family: var(--font-sans);
+  font-size: 0.58rem;
+  color: var(--gold-dim);
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  display: block;
 }
 
 .auth-input {
@@ -604,6 +621,12 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
   font-size: 0.82rem;
   margin-bottom: 1rem;
   text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.auth-input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
   letter-spacing: 0.05em;
 }
 
@@ -877,47 +900,47 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
     </div>
   </section>
 
-  <!-- PAGE 3: PRICING & INDEPENDENT PORTAL GATEWAYS (image_707b41.jpg Styling) -->
-  <div class="pricing-section-container">
-    <section id="pricing" style="background: transparent; padding: 0;">
-      <div class="orchestration-box">
-        <h2 class="orchestration-title">ACCESS THE ORCHESTRATION</h2>
-        <p class="orchestration-desc">POSITION YOUR ACCESS WITHIN THE COLLECTIVE ARCHITECTURE. CHOOSE YOUR REQUISITE SUB-NODE TERMINAL SYSTEM TO SYNC YOUR DATA PANELS.</p>
-         
-        <div class="pricing-grid">
+  <!-- PAGE 3: PRICING & INDEPENDENT INTEGRATED GATEWAYS WITH SPACE MEDIA BACKGROUND -->
+  <section id="pricing">
+    <div class="orchestration-box">
+      <h2 class="orchestration-title">ACCESS THE ORCHESTRATION</h2>
+      <p class="orchestration-desc">POSITION YOUR ACCESS WITHIN THE COLLECTIVE ARCHITECTURE. INPUT YOUR CREDENTIAL PROTOCOLS DIRECTLY INSIDE THE SEPARATE GATEWAY CARDS BELOW.</p>
+       
+      <div class="pricing-grid">
+        
+        <!-- Club House Container Node -->
+        <div class="tier">
+          <h3>The Club House</h3>
+          <p class="tier-desc">Access your social networking space. Event Streams, Community logs, and ongoing collective structural support parameters.</p>
           
-          <!-- Club House Container Node -->
-          <div class="tier">
-            <h3>The Club House</h3>
-            <p class="tier-desc">Access your social networking space. Event Streams, Community logs, and ongoing collective structural support parameters.</p>
-            
-            <div class="gateway-form-block">
-              <form onsubmit="handleSecureRouting(event, 'clubhouse');">
-                <input type="text" class="auth-input" placeholder="USER NAME" required />
-                <input type="password" class="auth-input" placeholder="PASSWORD" required />
-                <button type="submit" class="auth-btn">Initialize Clubhouse Session</button>
-              </form>
-            </div>
+          <div class="gateway-form-block">
+            <span class="auth-label-heading">AUTHENTICATE SYSTEM SUBSYSTEM</span>
+            <form onsubmit="handleSecureRouting(event, 'clubhouse');">
+              <input type="text" class="auth-input" placeholder="USER NAME" required />
+              <input type="password" class="auth-input" placeholder="PASSWORD" required />
+              <button type="submit" class="auth-btn">Initialize Clubhouse Session</button>
+            </form>
           </div>
+        </div>
 
-          <!-- Student Portal Container Node -->
-          <div class="tier">
-            <h3>Student Portal</h3>
-            <p class="tier-desc">Access your active courses and individual multi-stage lesson materials. Direct curriculum progression synchronization paths.</p>
-            
-            <div class="gateway-form-block">
-              <form onsubmit="handleSecureRouting(event, 'portal');">
-                <input type="text" class="auth-input" placeholder="USER NAME" required />
-                <input type="password" class="auth-input" placeholder="PASSWORD" required />
-                <button type="submit" class="auth-btn">Initialize Portal Session</button>
-              </form>
-            </div>
+        <!-- Student Portal Container Node -->
+        <div class="tier">
+          <h3>Student Portal</h3>
+          <p class="tier-desc">Access your active courses and individual multi-stage lesson materials. Direct curriculum progression synchronization paths.</p>
+          
+          <div class="gateway-form-block">
+            <span class="auth-label-heading">AUTHENTICATE STUDENT PORTAL</span>
+            <form onsubmit="handleSecureRouting(event, 'portal');">
+              <input type="text" class="auth-input" placeholder="USER NAME" required />
+              <input type="password" class="auth-input" placeholder="PASSWORD" required />
+              <button type="submit" class="auth-btn">Initialize Portal Session</button>
+            </form>
           </div>
 
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 
   <!-- PAGE 4: SECURE UNLOCKED WORKSPACE AREA -->
   <div id="unlocked-workspace" class="hidden-workspace">
