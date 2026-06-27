@@ -393,7 +393,7 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
 }
 
 /* ==========================================================================
-   PAGE 2: THEATER GRID LAYOUT (video.jfif - Fixed Image Display Engine)
+   PAGE 2: THEATER GRID LAYOUT (video.jfif)
    ========================================================================== */
 #engine {
   position: relative;
@@ -506,7 +506,7 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
 }
 
 /* ==========================================================================
-   PAGE 3: PRICING & ENTRANCE NODES (image_707b41.jpg Verification Build)
+   PAGE 3: PRICING & EMBEDDED ENTRY PORTALS (image_707b41.jpg Layout)
    ========================================================================== */
 .pricing-section-container {
   position: relative;
@@ -520,7 +520,7 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 3.5rem 2rem;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   text-align: center;
   box-shadow: 0 30px 60px rgba(0,0,0,0.85);
@@ -551,18 +551,19 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
 }
 
 .tier {
-  background: rgba(5, 5, 5, 0.85);
+  background: rgba(5, 5, 5, 0.92);
   border: 1px solid rgba(240, 215, 140, 0.35);
-  padding: 3rem 2rem;
+  padding: 3rem 2.5rem;
   display: flex;
   flex-direction: column;
   text-align: center;
   transition: border-color 0.3s;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.7);
 }
 
 .tier:hover {
@@ -571,80 +572,27 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
 
 .tier h3 {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--gold);
   font-weight: 400;
   margin-bottom: 1rem;
+  letter-spacing: 0.05em;
 }
 
 .tier-desc {
   font-family: var(--font-sans);
   font-size: 0.92rem;
-  color: #ffffff;
+  color: #dddddd;
   line-height: 1.6;
   margin-bottom: 2rem;
-  flex: 1;
 }
 
-.tier-cta {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: var(--tracking);
-  text-transform: uppercase;
-  padding: 1rem 1.5rem;
-  text-align: center;
-  background: transparent;
-  color: var(--white);
-  border: 1px solid var(--white);
-  transition: all 0.3s ease;
-  cursor: pointer;
+/* Inline Terminal Input Styling */
+.gateway-form-block {
   margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
-
-.tier-cta:hover { 
-  background: var(--gold); 
-  color: var(--black);
-  border-color: var(--gold);
-}
-
-/* Gateway Node Box */
-.terminal-gate {
-  margin-top: 4rem;
-  border: 1px solid rgba(240, 215, 140, 0.4);
-  background: rgba(5, 5, 5, 0.95);
-  padding: 3rem 2rem;
-  text-align: center;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.9);
-}
-
-.auth-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-  padding-bottom: 1rem;
-}
-
-.auth-tab {
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  letter-spacing: var(--tracking);
-  text-transform: uppercase;
-  color: #bbbbbb;
-  cursor: pointer;
-  transition: color 0.2s;
-  font-weight: 600;
-}
-
-.auth-tab.active, .auth-tab:hover { color: var(--gold); }
-
-.auth-panel { display: none; }
-.auth-panel.active { display: block; }
 
 .auth-input {
   width: 100%;
@@ -653,9 +601,10 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
   padding: 0.85rem 1rem;
   color: var(--white);
   font-family: var(--font-sans);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   margin-bottom: 1rem;
   text-align: center;
+  letter-spacing: 0.05em;
 }
 
 .auth-input:focus { border-color: var(--gold); outline: none; }
@@ -672,13 +621,13 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
   letter-spacing: var(--tracking);
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
-.auth-btn:hover { background: #ffffff; }
+.auth-btn:hover { background: #ffffff; color: var(--black); }
 
 /* ==========================================================================
-   PAGE 4: SECURE UNLOCKED WORKSPACE AREA (second stage.jfif Verification Build)
+   PAGE 4: SECURE UNLOCKED WORKSPACE AREA (second stage.jfif)
    ========================================================================== */
 .hidden-workspace {
   display: none;
@@ -861,8 +810,8 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
       </ul>
 
       <div class="nav-actions">
-        <a href="#gateway" onclick="switchTab('clubhouse')" class="nav-btn nav-btn--outline">LOGIN / SIGN-UP</a>
-        <a href="#gateway" onclick="switchTab('portal')" class="nav-btn nav-btn--gold">Student Login</a>
+        <a href="#pricing" class="nav-btn nav-btn--outline">Clubhouse Access</a>
+        <a href="#pricing" class="nav-btn nav-btn--gold">Student Entry</a>
       </div>
     </div>
   </nav>
@@ -875,7 +824,7 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
         <div class="hero-eyebrow-tag">The Professional Remnant Pipeline</div>
         <h1 class="hero-main-title">BUSINESS IS A PERFORMING ART.<br>WAKE UP YOUR CREATIVITY.</h1>
         <p class="hero-description">Welcome to H-Note Academy. We integrate premium vocal tracking, spatial somatic positioning, and narrative arts to transform creative minds into exceptional modern operational leaders.</p>
-        <a href="#gateway" class="hero-main-button">Access Secure System</a>
+        <a href="#pricing" class="hero-main-button">Access Secure System</a>
       </div>
 
       <div class="founder-card">
@@ -928,56 +877,43 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
     </div>
   </section>
 
-  <!-- PAGE 3: PRICING & ENTRANCE NODES CONTAINER (image_707b41.jpg Styling Locked In) -->
+  <!-- PAGE 3: PRICING & INDEPENDENT PORTAL GATEWAYS (image_707b41.jpg Styling) -->
   <div class="pricing-section-container">
-    <section id="pricing" style="background: transparent; padding: 0 0 4rem 0;">
+    <section id="pricing" style="background: transparent; padding: 0;">
       <div class="orchestration-box">
         <h2 class="orchestration-title">ACCESS THE ORCHESTRATION</h2>
-        <p class="orchestration-desc">POSITION YOUR ACCESS WITHIN THE COLLECTIVE ARCHITECTURE. YOUR OPTIONS FOR ONGOING STUDENT SUPPORT AND HIGH-LEVEL SOCIAL SYSTEMS.</p>
+        <p class="orchestration-desc">POSITION YOUR ACCESS WITHIN THE COLLECTIVE ARCHITECTURE. CHOOSE YOUR REQUISITE SUB-NODE TERMINAL SYSTEM TO SYNC YOUR DATA PANELS.</p>
          
         <div class="pricing-grid">
+          
+          <!-- Club House Container Node -->
           <div class="tier">
             <h3>The Club House</h3>
-            <p class="tier-desc">Access your social networking space. Full Clubhouse Community Log. Event Streams &amp; Support.</p>
-            <a href="#gateway" onclick="switchTab('clubhouse')" class="tier-cta">ENTER CLUB HOUSE</a>
+            <p class="tier-desc">Access your social networking space. Event Streams, Community logs, and ongoing collective structural support parameters.</p>
+            
+            <div class="gateway-form-block">
+              <form onsubmit="handleSecureRouting(event, 'clubhouse');">
+                <input type="text" class="auth-input" placeholder="USER NAME" required />
+                <input type="password" class="auth-input" placeholder="PASSWORD" required />
+                <button type="submit" class="auth-btn">Initialize Clubhouse Session</button>
+              </form>
+            </div>
           </div>
+
+          <!-- Student Portal Container Node -->
           <div class="tier">
             <h3>Student Portal</h3>
-            <p class="tier-desc">Access your courses and course materials. Complete entry to open Student Portal paths.</p>
-            <a href="#gateway" onclick="switchTab('portal')" class="tier-cta">ENTER PORTAL</a>
+            <p class="tier-desc">Access your active courses and individual multi-stage lesson materials. Direct curriculum progression synchronization paths.</p>
+            
+            <div class="gateway-form-block">
+              <form onsubmit="handleSecureRouting(event, 'portal');">
+                <input type="text" class="auth-input" placeholder="USER NAME" required />
+                <input type="password" class="auth-input" placeholder="PASSWORD" required />
+                <button type="submit" class="auth-btn">Initialize Portal Session</button>
+              </form>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Unified Entry Gateway Node -->
-    <section id="gateway" style="background: transparent; padding: 4rem 0 0 0;">
-      <div class="container">
-        <div class="section-label">02 // Central Verification Node</div>
-        <h2 class="section-heading">System Entrance Gateway</h2>
-        <p class="section-desc">Input authorized identity tokens to instantiate your custom dashboard space and unlock secure platform panels.</p>
-         
-        <div class="terminal-gate">
-          <div class="auth-tabs">
-            <div id="tab-portal" class="auth-tab active" onclick="switchTab('portal')">Log In Student Portal</div>
-            <div id="tab-clubhouse" class="auth-tab" onclick="switchTab('clubhouse')">Clubhouse Gateway</div>
-          </div>
-           
-          <div id="panel-portal" class="auth-panel active">
-            <form onsubmit="handleSecureRouting(event, 'portal');">
-              <input type="text" class="auth-input" placeholder="STUDENT PLACEMENT IDENTIFIER" required />
-              <input type="password" class="auth-input" placeholder="ACCESS PIN KEY" required />
-              <button type="submit" class="auth-btn">Initialize Portal Session</button>
-            </form>
-          </div>
-           
-          <div id="panel-clubhouse" class="auth-panel">
-            <form onsubmit="handleSecureRouting(event, 'clubhouse');">
-              <input type="email" class="auth-input" placeholder="ACCOUNT DISCOVERY EMAIL" required />
-              <input type="password" class="auth-input" placeholder="SECURE TERMINAL KEY" required />
-              <button type="submit" class="auth-btn">Authorize Node Connection</button>
-            </form>
-          </div>
         </div>
       </div>
     </section>
@@ -1055,27 +991,17 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
 
   <!-- System Automation Logic Controls -->
   <script>
-    function switchTab(type) {
-      const tabs = document.querySelectorAll('.auth-tab');
-      tabs.forEach(tab => tab.classList.remove('active'));
-      
-      const targetedTab = document.getElementById('tab-' + type);
-      if(targetedTab) targetedTab.classList.add('active');
-
-      document.getElementById('panel-portal').classList.remove('active');
-      document.getElementById('panel-clubhouse').classList.remove('active');
-      
-      document.getElementById('panel-' + type).classList.add('active');
-    }
-
     function handleSecureRouting(event, destinationType) {
       event.preventDefault();
       
+      // Update workspace display state title text
       document.getElementById('active-session-title').innerText = destinationType === 'portal' ? 'Student Portal' : 'Clubhouse Network';
       
+      // Make space visible
       const workspace = document.getElementById('unlocked-workspace');
       workspace.style.display = 'block';
       
+      // Smooth travel down to revealed assets area
       setTimeout(() => {
         workspace.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 100);
