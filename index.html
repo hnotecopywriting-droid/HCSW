@@ -13,8 +13,8 @@
   --gold: #f0d78c;
   --gold-dim: #b8a45e;
   --charcoal: #111111;
-  --border: rgba(240, 215, 140, 0.25);
-  --muted: #e0e0e0;
+  --border: rgba(240, 215, 140, 0.35);
+  --muted: #f5f5f5;
   --font-serif: Georgia, 'Times New Roman', Times, serif;
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   --tracking: 0.18em;
@@ -46,7 +46,7 @@ a { color: inherit; text-decoration: none; }
   padding: 1.25rem 4rem;
   background: rgba(5, 5, 5, 0.95);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .nav-brand-logo {
@@ -84,12 +84,13 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.68rem;
   letter-spacing: var(--tracking);
   text-transform: uppercase;
-  color: #cccccc;
+  color: #ffffff;
   padding: 1rem 0;
   transition: color 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  font-weight: 600;
 }
 
 .dropdown-parent:hover > a {
@@ -103,8 +104,8 @@ a { color: inherit; text-decoration: none; }
   transform: translateX(-50%) translateY(10px);
   width: 880px;
   background: rgba(10, 10, 10, 0.98);
-  border: 1px solid rgba(240, 215, 140, 0.15);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  border: 1px solid rgba(240, 215, 140, 0.25);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.9);
   padding: 2rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -131,7 +132,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--gold);
   letter-spacing: var(--tracking);
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
@@ -151,7 +152,7 @@ a { color: inherit; text-decoration: none; }
   font-family: var(--font-sans);
   font-size: 0.75rem;
   letter-spacing: 0.02em;
-  color: #eeeeee;
+  color: #ffffff;
   display: block;
   transition: all 0.2s ease;
 }
@@ -172,7 +173,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.65rem;
   letter-spacing: var(--tracking);
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0.6rem 1.2rem;
   transition: all 0.3s ease;
 }
@@ -180,11 +181,13 @@ a { color: inherit; text-decoration: none; }
 .nav-btn--outline {
   color: var(--white);
   border: 1px solid var(--white);
+  background: rgba(0,0,0,0.4);
 }
 
 .nav-btn--outline:hover {
   color: var(--gold);
   border-color: var(--gold);
+  background: rgba(0,0,0,0.8);
 }
 
 .nav-btn--gold {
@@ -210,16 +213,13 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 
 .hero-bg {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-image: linear-gradient(135deg, rgba(5,5,5,0.30) 0%, rgba(5,5,5,0.55) 100%), url('background.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background: linear-gradient(135deg, rgba(5,5,5,0.30) 0%, rgba(5,5,5,0.55) 100%), url('background.png') center center / cover no-repeat;
   z-index: 1;
 }
 
@@ -250,7 +250,7 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
   margin-bottom: 1.5rem;
   font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
 .hero-main-title {
@@ -261,7 +261,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 2rem;
   color: var(--white);
   font-family: var(--font-serif);
-  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
 }
 
 .hero-description {
@@ -270,7 +270,7 @@ a { color: inherit; text-decoration: none; }
   color: #ffffff;
   line-height: 1.8;
   margin-bottom: 2.5rem;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+  text-shadow: 0 2px 5px rgba(0,0,0,0.9);
 }
 
 .hero-main-button {
@@ -285,7 +285,7 @@ a { color: inherit; text-decoration: none; }
   padding: 1.1rem 2.75rem;
   border: 1px solid var(--gold);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
 }
 
 .hero-main-button:hover {
@@ -297,11 +297,11 @@ a { color: inherit; text-decoration: none; }
   flex: 1;
   min-width: 310px;
   max-width: 440px;
-  background: rgba(10, 10, 10, 0.85);
-  border: 1px solid rgba(240, 215, 140, 0.35);
+  background: rgba(10, 10, 10, 0.9);
+  border: 1px solid rgba(240, 215, 140, 0.4);
   padding: 3rem 2.5rem;
   backdrop-filter: blur(8px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
 }
 
 .founder-card-photo {
@@ -311,7 +311,7 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--gold);
   background: url('Best top Randy.jpg') center center / cover no-repeat;
   margin: 0 auto 2rem auto;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 
 .founder-card-name {
@@ -354,7 +354,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Layout Grid Standards */
-section { padding: 6rem 2rem; position: relative; z-index: 5; }
+section { padding: 7rem 2rem; position: relative; z-index: 5; }
 
 .container {
   max-width: 1200px;
@@ -369,7 +369,7 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
   color: var(--gold);
   font-weight: 700;
   margin-bottom: 1rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.9);
 }
 
 .section-heading {
@@ -378,7 +378,7 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
   letter-spacing: 0.04em;
   line-height: 1.3;
   margin-bottom: 1.25rem;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.9);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.95);
 }
 
 .section-desc {
@@ -389,12 +389,18 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
   line-height: 1.8;
   max-width: 65ch;
   margin-bottom: 3rem;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.9);
+  text-shadow: 0 2px 5px rgba(0,0,0,0.95);
 }
 
 /* ==========================================================================
-   PAGE 2: THEATER GRID LAYOUT (video.jfif - High Contrast Version)
+   PAGE 2: THEATER GRID LAYOUT (video.jfif - Fixed Image Display Engine)
    ========================================================================== */
+#engine {
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  background: linear-gradient(180deg, rgba(5,5,5,0.15) 0%, rgba(5,5,5,0.35) 100%), url('video.jfif') center center / cover no-repeat;
+}
+
 .theater-grid {
   display: flex;
   gap: 3.5rem;
@@ -413,7 +419,7 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
   padding-top: 56.25%;
   border: 2px solid var(--gold);
   background: var(--black);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.9);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.95);
 }
 
 .theater-video-inner {
@@ -425,7 +431,7 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
   flex-direction: column;
   gap: 1rem;
   cursor: pointer;
-  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
   transition: background 0.3s ease;
 }
 
@@ -438,7 +444,7 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 15px rgba(240, 215, 140, 0.4);
+  box-shadow: 0 0 15px rgba(240, 215, 140, 0.5);
   transition: transform 0.3s ease;
 }
 
@@ -468,10 +474,10 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
 }
 
 .brief-card {
-  background: rgba(5, 5, 5, 0.85);
-  border: 1px solid var(--gold-dim);
+  background: rgba(5, 5, 5, 0.88);
+  border: 1px solid var(--gold);
   padding: 1.75rem 2rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
 .brief-tag {
@@ -500,27 +506,24 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
 }
 
 /* ==========================================================================
-   PAGE 3: PRICING & ENTRANCE NODES (image_707b41.jpg Inspired Layout)
+   PAGE 3: PRICING & ENTRANCE NODES (image_707b41.jpg Verification Build)
    ========================================================================== */
 .pricing-section-container {
   position: relative;
-  background-image: linear-gradient(180deg, rgba(5,5,5,0.2) 0%, rgba(5,5,5,0.4) 100%), url('image_707b41.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding: 6rem 2rem;
+  background: linear-gradient(180deg, rgba(5,5,5,0.1) 0%, rgba(5,5,5,0.3) 100%), url('image_707b41.jpg') center center / cover no-repeat;
+  padding: 7rem 2rem;
+  width: 100%;
 }
 
-/* Centered High Contrast Glass Box to mimic image_707b41.jpg structure */
 .orchestration-box {
-  background: rgba(15, 15, 15, 0.75);
+  background: rgba(15, 15, 15, 0.78);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 3.5rem 2rem;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.85);
 }
 
 .orchestration-title {
@@ -531,17 +534,19 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
   text-transform: uppercase;
   margin-bottom: 1rem;
   font-weight: 400;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .orchestration-desc {
   font-family: var(--font-sans);
   font-size: 0.85rem;
-  color: #dddddd;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   max-width: 75ch;
   margin: 0 auto 3rem auto;
   line-height: 1.6;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
 .pricing-grid {
@@ -552,7 +557,7 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
 
 .tier {
   background: rgba(5, 5, 5, 0.85);
-  border: 1px solid rgba(240, 215, 140, 0.3);
+  border: 1px solid rgba(240, 215, 140, 0.35);
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
@@ -606,14 +611,14 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
 /* Gateway Node Box */
 .terminal-gate {
   margin-top: 4rem;
-  border: 1px solid rgba(240, 215, 140, 0.3);
-  background: rgba(5, 5, 5, 0.9);
+  border: 1px solid rgba(240, 215, 140, 0.4);
+  background: rgba(5, 5, 5, 0.95);
   padding: 3rem 2rem;
   text-align: center;
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.9);
 }
 
 .auth-tabs {
@@ -621,7 +626,7 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
   justify-content: center;
   gap: 1.5rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
   padding-bottom: 1rem;
 }
 
@@ -630,7 +635,7 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
   font-size: 0.72rem;
   letter-spacing: var(--tracking);
   text-transform: uppercase;
-  color: #888888;
+  color: #bbbbbb;
   cursor: pointer;
   transition: color 0.2s;
   font-weight: 600;
@@ -673,7 +678,7 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
 .auth-btn:hover { background: #ffffff; }
 
 /* ==========================================================================
-   PAGE 4: SECURE UNLOCKED WORKSPACE AREA (second stage.jfif - High Contrast)
+   PAGE 4: SECURE UNLOCKED WORKSPACE AREA (second stage.jfif Verification Build)
    ========================================================================== */
 .hidden-workspace {
   display: none;
@@ -688,12 +693,10 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
 
 .curriculum-section-container {
   position: relative;
-  background-image: linear-gradient(180deg, rgba(5,5,5,0.2) 0%, rgba(5,5,5,0.4) 100%), url('second stage.jfif');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding: 6rem 2rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  background: linear-gradient(180deg, rgba(5,5,5,0.1) 0%, rgba(5,5,5,0.3) 100%), url('second stage.jfif') center center / cover no-repeat;
+  padding: 7rem 2rem;
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .user-profile-widget {
@@ -734,10 +737,10 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
 }
 
 .service {
-  background: rgba(5, 5, 5, 0.9);
-  border: 1px solid var(--gold-dim);
+  background: rgba(5, 5, 5, 0.92);
+  border: 1px solid var(--gold);
   padding: 2.5rem 2rem;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.75);
 }
 
 .service-number {
@@ -769,7 +772,7 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
   list-style: none;
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.2);
 }
 
 .class-list li {
@@ -782,13 +785,13 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
 
 /* Contact & Footer Section */
 .contact { 
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.15);
   padding-bottom: 4rem;
   background: var(--black);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.15);
   padding: 2rem 0;
   display: flex;
   justify-content: space-between;
@@ -802,8 +805,9 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
   font-family: var(--font-sans);
   font-size: 0.65rem;
   letter-spacing: var(--tracking);
-  color: #aaaaaa;
+  color: #ffffff;
   text-transform: uppercase;
+  font-weight: 500;
 }
 </style>
 </head>
@@ -885,15 +889,7 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
   </header>
 
   <!-- PAGE 2: WELCOME & SERVICE PILLARS WITH VIDEO BACKGROUND -->
-  <section id="engine" style="
-    position: relative;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    background-image: linear-gradient(180deg, rgba(5,5,5,0.2) 0%, rgba(5,5,5,0.4) 100%), url('video.jfif');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    padding: 7rem 2rem;
-  ">
+  <section id="engine">
     <div class="container" style="position: relative; z-index: 2;">
       <div class="section-label">01 // Introduction</div>
       <h2 class="section-heading">Welcome to the H-Note. Are you ready to go to the next level?</h2>
@@ -932,7 +928,7 @@ section { padding: 6rem 2rem; position: relative; z-index: 5; }
     </div>
   </section>
 
-  <!-- PAGE 3: PRICING & ENTRANCE NODES CONTAINER (image_707b41.jpg Styling) -->
+  <!-- PAGE 3: PRICING & ENTRANCE NODES CONTAINER (image_707b41.jpg Styling Locked In) -->
   <div class="pricing-section-container">
     <section id="pricing" style="background: transparent; padding: 0 0 4rem 0;">
       <div class="orchestration-box">
