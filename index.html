@@ -6,44 +6,57 @@
     <title>H-Note Creative Solutions | Access</title>
     <style>
         body { 
-            background: url('121212121JPG.JPG') no-repeat center center fixed; 
-            background-size: cover; 
-            color: #ffffff; 
-            font-family: 'Segoe UI', sans-serif; 
             margin: 0; 
-            padding: 50px;
-            text-align: center;
+            padding: 0; 
+            font-family: 'Segoe UI', sans-serif;
+            background: url('space-media-746582-prod.jpg') no-repeat center center fixed; 
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        .container { background: rgba(0, 0, 0, 0.85); padding: 50px; border-radius: 15px; max-width: 900px; margin: auto; border: 1px solid #ffca28; }
-        h1 { color: #ffca28; letter-spacing: 3px; }
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
-        .card { padding: 30px; border: 1px solid #6a1b9a; border-radius: 10px; background: rgba(26, 26, 46, 0.5); }
+        .overlay {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border: 1px solid #ffca28;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 800px;
+            color: #ffffff;
+        }
+        h1 { color: #ffca28; margin-bottom: 10px; }
+        .grid { display: flex; gap: 40px; margin-top: 30px; }
+        .card { flex: 1; padding: 20px; border: 1px solid #6a1b9a; background: rgba(26, 26, 46, 0.6); border-radius: 10px; }
         .btn { 
-            display: block; margin-top: 20px; padding: 15px; background: #6a1b9a; 
+            display: block; margin-top: 20px; padding: 12px; background: #6a1b9a; 
             color: white; text-decoration: none; border-radius: 5px; font-weight: bold; 
         }
-        .btn:hover { background: #ffca28; color: #0a0a0c; }
+        .btn:hover { background: #ffca28; color: #000; }
+        .login-top { position: absolute; top: 20px; right: 20px; color: #ffca28; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>H-NOTE CREATIVE SOLUTIONS</h1>
-    <p>Choose your positioning within the collective architecture.</p>
+    <div class="login-top">LOGIN / SIGN-UP</div>
 
-    <div class="grid">
-        <div class="card">
-            <h3>Student Portal</h3>
-            <p>Access your courses and course materials.</p>
-            <a href="students_portal/dashboard.html" class="btn">ENTER PORTAL</a>
-        </div>
-        <div class="card">
-            <h3>The Club House</h3>
-            <p>Engage in the social networking space.</p>
-            <a href="clubhouse/index.html" class="btn">ENTER CLUB HOUSE</a>
+    <div class="overlay">
+        <h1>ACCESS THE ORCHESTRATION</h1>
+        <p>Position your access within the collective architecture. Your options for ongoing student support and high-level social systems.</p>
+
+        <div class="grid">
+            <div class="card">
+                <h3>The Club House</h3>
+                <p>Access your social networking space. Full Clubhouse Community Log. Event Streams & Support.</p>
+                <a href="clubhouse/index.html" class="btn">ENTER CLUB HOUSE</a>
+            </div>
+            <div class="card">
+                <h3>Student Portal</h3>
+                <p>Access your courses and course materials. Complete entry to open Student Portal paths.</p>
+                <a href="students_portal/dashboard.html" class="btn">ENTER PORTAL</a>
+            </div>
         </div>
     </div>
-</div>
 
 </body>
 </html>
