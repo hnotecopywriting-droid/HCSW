@@ -949,6 +949,10 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
         <div class="user-profile-widget">
           <div class="avatar-container"></div>
           <div class="avatar-text">Active Workspace: <span id="active-session-title">Verified</span> Node Sync Connected (Randy Lee Hensley View)</div>
+          <!-- Reset / Lock System Control -->
+          <button onclick="lockWorkspace();" style="margin-left: auto; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: var(--font-sans); font-size: 0.55rem; letter-spacing: var(--tracking); padding: 0.4rem 0.8rem; text-transform: uppercase; cursor: pointer; transition: all 0.2s;">
+            Lock Terminal
+          </button>
         </div>
       </div>
 
@@ -1001,8 +1005,18 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
     <div class="container">
       <div class="section-label">04 // Secure Pipeline</div>
       <h2 class="section-heading">Initiate Verification Sequence</h2>
-      <p class="section-desc">Submit your background details to confirm your placement verification parameters within the remnant database.</p>
+      <p class="section-desc">Submit your parameters to request integration verification within the dynamic database pipeline.</p>
        
+      <!-- Fully Implemented Input Grid -->
+      <form style="max-width: 600px; margin-top: 2rem;" onsubmit="alert('Sequence Logged. Standing by for deployment protocols.'); event.preventDefault();">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+          <input type="text" class="auth-input" placeholder="IDENTIFIER / NAME" required style="text-align: left; margin: 0;">
+          <input type="email" class="auth-input" placeholder="SECURE COMMS EMAIL" required style="text-align: left; margin: 0;">
+        </div>
+        <textarea class="auth-input" placeholder="TRANSMISSION NOTE / PROTOCOL OBJECTIVES" rows="4" required style="text-align: left; resize: none; text-transform: none;"></textarea>
+        <button type="submit" class="auth-btn" style="margin-top: 0.5rem;">Transmit Verification Sequence</button>
+      </form>
+
       <div class="footer-bottom">
         <div class="footer-copy">© 2026 H-NOTE CREATIVE SOLUTIONS | THE GREAT REMINDER</div>
         <div class="footer-copy" style="color: var(--gold-dim); font-size: 0.62rem;">
@@ -1017,17 +1031,20 @@ section { padding: 7rem 2rem; position: relative; z-index: 5; }
     function handleSecureRouting(event, destinationType) {
       event.preventDefault();
       
-      // Update workspace display state title text
       document.getElementById('active-session-title').innerText = destinationType === 'portal' ? 'Student Portal' : 'Clubhouse Network';
       
-      // Make space visible
       const workspace = document.getElementById('unlocked-workspace');
       workspace.style.display = 'block';
       
-      // Smooth travel down to revealed assets area
       setTimeout(() => {
         workspace.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 100);
+    }
+
+    function lockWorkspace() {
+      const workspace = document.getElementById('unlocked-workspace');
+      workspace.style.display = 'none';
+      document.getElementById('pricing').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   </script>
 </body>
